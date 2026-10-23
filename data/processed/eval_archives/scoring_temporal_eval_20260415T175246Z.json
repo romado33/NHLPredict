@@ -1,0 +1,2076 @@
+{
+  "generated_at": "2026-04-15T13:52:46.524888",
+  "health_policy_version": "2026-04_playoff_presumption_v1",
+  "eval_by_target": {
+    "target_points": {
+      "ridge": {
+        "mae": 1.894399879128061,
+        "rmse": 2.940440464872707,
+        "spearman": 0.7513330807943719,
+        "mean_top10_overlap": 0.561111111111111,
+        "mean_top35_overlap": 0.7047619047619046,
+        "mean_top40_overlap": 0.7124999999999999,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.7342970877066521,
+            "rmse": 2.524919325016154,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.675,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 2.0182636684506043,
+            "rmse": 3.53328087092669,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 2.1814573256536236,
+            "rmse": 3.3499634598989125,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.8,
+            "top40_overlap": 0.775,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.947731916440904,
+            "rmse": 2.8640134108972806,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.7576368454488622,
+            "rmse": 2.6663781552492507,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.675,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.873101396725123,
+            "rmse": 2.9568918789247136,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.9072088718886493,
+            "rmse": 2.7947207661171016,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7714285714285715,
+            "top40_overlap": 0.75,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.6924087810201036,
+            "rmse": 2.376108100291877,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.75,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.9114779488577083,
+            "rmse": 3.0606684221150284,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.75,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.6526948607676357,
+            "rmse": 2.4045792130236197,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.7,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.9418261197859437,
+            "rmse": 3.0823335552141122,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.7081297503382404,
+            "rmse": 2.388527157143802,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.8,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.9938627653734498,
+            "rmse": 3.173078330575994,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.7,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.6384174514122032,
+            "rmse": 2.2606116433015595,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.9402000169633686,
+            "rmse": 2.734221240907192,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 2.1952351349682435,
+            "rmse": 3.2002466056622962,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.725,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.9774196959855743,
+            "rmse": 3.811309230816613,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.9738655980595556,
+            "rmse": 3.08762060650831,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.725,
+            "n_players": 321
+          }
+        ]
+      },
+      "xgboost": {
+        "mae": 1.8819311677428772,
+        "rmse": 2.8010300283524767,
+        "spearman": 0.7425452592451235,
+        "mean_top10_overlap": 0.5722222222222223,
+        "mean_top35_overlap": 0.6952380952380951,
+        "mean_top40_overlap": 0.7083333333333335,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.7750883231113954,
+            "rmse": 2.639460864928611,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.865526099735296,
+            "rmse": 2.8773784861726313,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.75,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 2.1375903747051455,
+            "rmse": 3.2426195808134253,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.8,
+            "top40_overlap": 0.8,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.947056208717499,
+            "rmse": 2.8619833832829302,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.6703788359375562,
+            "rmse": 2.4679407929423465,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.725,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.8401282809846677,
+            "rmse": 2.7819621212949692,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.8403533409087511,
+            "rmse": 2.634769257785936,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.775,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.8331954158727939,
+            "rmse": 2.5297533205251415,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.8376179121983198,
+            "rmse": 2.93096552009018,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.803975071837778,
+            "rmse": 2.7140426805819886,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 2.0284905319832838,
+            "rmse": 3.0407808336427626,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.76676190936547,
+            "rmse": 2.487072649581344,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.8,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.939965594719238,
+            "rmse": 3.0524242400370856,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.6629952001800903,
+            "rmse": 2.3095848357806688,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 2.0478361497701303,
+            "rmse": 2.925904712276549,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 2.0940871389991624,
+            "rmse": 2.9447686933856954,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.675,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.7804898424807822,
+            "rmse": 2.7537461891839237,
+            "top10_overlap": 0.8,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.9768519986455686,
+            "rmse": 2.919262292893113,
+            "top10_overlap": 0.9,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.675,
+            "n_players": 321
+          }
+        ]
+      },
+      "lightgbm": {
+        "mae": 1.8765381031367832,
+        "rmse": 2.7988350344509576,
+        "spearman": 0.7434378408892922,
+        "mean_top10_overlap": 0.5444444444444445,
+        "mean_top35_overlap": 0.6999999999999998,
+        "mean_top40_overlap": 0.7125,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.7866567373114925,
+            "rmse": 2.6815127551965205,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.725,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.8706829802809788,
+            "rmse": 2.892560413557841,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 2.202202039273488,
+            "rmse": 3.3752830705313857,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.8,
+            "top40_overlap": 0.775,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.8595436147185729,
+            "rmse": 2.6630818989757947,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.6522545204863388,
+            "rmse": 2.447774982001524,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.725,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.818470677818593,
+            "rmse": 2.758973768009831,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.8409911344033358,
+            "rmse": 2.6269857302832196,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.75,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.8066090204272254,
+            "rmse": 2.4934064187927545,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.8295418293598937,
+            "rmse": 2.904491759681909,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.7,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.7896780445208325,
+            "rmse": 2.655067567568177,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 2.0657963062555775,
+            "rmse": 3.1188566988825,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.702846971743811,
+            "rmse": 2.39596304484224,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7714285714285715,
+            "top40_overlap": 0.8,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.9338209603892462,
+            "rmse": 3.075485980319658,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.7,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.6776232203841448,
+            "rmse": 2.3490826740415476,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 2.0384641455252117,
+            "rmse": 2.9639505553584446,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 2.087450375532355,
+            "rmse": 2.943217266344151,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.675,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.7943252198114836,
+            "rmse": 2.7259612591751554,
+            "top10_overlap": 0.8,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.75,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.9941558381195408,
+            "rmse": 2.93681641896676,
+            "top10_overlap": 0.8,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.675,
+            "n_players": 321
+          }
+        ]
+      },
+      "gated_blend": {
+        "mae": 1.8763068793128346,
+        "rmse": 2.789194768136983,
+        "spearman": 0.7501054080410994,
+        "mean_top10_overlap": 0.5833333333333334,
+        "mean_top35_overlap": 0.6999999999999998,
+        "mean_top40_overlap": 0.7180555555555554,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.7535012464423891,
+            "rmse": 2.528067482056075,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.725,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.807131439065968,
+            "rmse": 2.7598392245887378,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.725,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 2.203292993942127,
+            "rmse": 3.377480045872782,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.8,
+            "top40_overlap": 0.8,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.948714096124763,
+            "rmse": 2.822115389130572,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.7,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.6788605224001234,
+            "rmse": 2.5329914196235443,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.725,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.8886635412566375,
+            "rmse": 2.859577673871977,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.8722456948210078,
+            "rmse": 2.716447190996186,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.775,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.7439942115883458,
+            "rmse": 2.4406329430160754,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.725,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.8497768613342773,
+            "rmse": 2.9570162172717804,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.7399301121525774,
+            "rmse": 2.5813003284196414,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 2.0073035337025416,
+            "rmse": 3.0956520015701243,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.7130811043607233,
+            "rmse": 2.4452102794272954,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.8,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.983784420169399,
+            "rmse": 3.155028535954504,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.725,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.710331139027859,
+            "rmse": 2.3648178559655944,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 2.0135308446307585,
+            "rmse": 2.8168517882636044,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 2.1493935046943,
+            "rmse": 3.0277858235593937,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.7,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.7001071854247949,
+            "rmse": 2.4449498629238917,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.955179664981981,
+            "rmse": 2.8314117776568293,
+            "top10_overlap": 0.8,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 321
+          }
+        ]
+      }
+    },
+    "target_goals": {
+      "ridge": {
+        "mae": 0.9692541876209403,
+        "rmse": 1.537264241251534,
+        "spearman": 0.6509735848866491,
+        "mean_top10_overlap": 0.4666666666666667,
+        "mean_top35_overlap": 0.6174603174603175,
+        "mean_top40_overlap": 0.6277777777777778,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 0.8799467962205565,
+            "rmse": 1.3726358804607557,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.625,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 0.989727379505376,
+            "rmse": 1.735958867694174,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.675,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.0497289725940584,
+            "rmse": 1.7028749318591172,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 0.9419170212625199,
+            "rmse": 1.4880498851881985,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.675,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 0.8283115498421565,
+            "rmse": 1.2132063165587528,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5428571428571428,
+            "top40_overlap": 0.55,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 0.9280681384872259,
+            "rmse": 1.3895439591575969,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.000110496269376,
+            "rmse": 1.5196003429349787,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 0.9301777912650533,
+            "rmse": 1.400619361248335,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 0.972171266579404,
+            "rmse": 1.4756250275710543,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.65,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 0.9137818974220058,
+            "rmse": 1.3907841595324357,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.575,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.036447051645267,
+            "rmse": 1.627826928596889,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 0.9063304931666721,
+            "rmse": 1.4326021802125937,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.625,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.0240723788893122,
+            "rmse": 1.6721356125697664,
+            "top10_overlap": 0.2,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 0.8486207325254753,
+            "rmse": 1.291043658401696,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.0826425383407698,
+            "rmse": 1.721798475005195,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.575,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.037612346088737,
+            "rmse": 1.57755123682491,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.6,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 0.9916735393487092,
+            "rmse": 1.8041765147478668,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.0618826402108537,
+            "rmse": 1.6343384626052002,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 321
+          }
+        ]
+      },
+      "xgboost": {
+        "mae": 0.9650693344291379,
+        "rmse": 1.4991935013374866,
+        "spearman": 0.6436908499555232,
+        "mean_top10_overlap": 0.4388888888888889,
+        "mean_top35_overlap": 0.6095238095238095,
+        "mean_top40_overlap": 0.6194444444444445,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 0.8868225414244025,
+            "rmse": 1.3823735179281107,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.0019369568376812,
+            "rmse": 1.6297926309647692,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.0254508110041272,
+            "rmse": 1.6560583340004573,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 0.939704211600395,
+            "rmse": 1.4935860686368443,
+            "top10_overlap": 0.2,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.65,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 0.823310663310044,
+            "rmse": 1.1844111674863382,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5142857142857142,
+            "top40_overlap": 0.525,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 0.9418300194379229,
+            "rmse": 1.4520486707850926,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 0.9824140859198963,
+            "rmse": 1.4981276323297161,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 0.9557381497151577,
+            "rmse": 1.4313624211265927,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 0.9839499938855965,
+            "rmse": 1.5258182896542214,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.5428571428571428,
+            "top40_overlap": 0.625,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 0.9328347225118121,
+            "rmse": 1.4312970046302915,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.0372138280478809,
+            "rmse": 1.6576556001809062,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 0.8988982764084215,
+            "rmse": 1.4116761789482464,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 0.9959780423979744,
+            "rmse": 1.6024434772347789,
+            "top10_overlap": 0.2,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.625,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 0.8620764013379812,
+            "rmse": 1.29146109628105,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.6,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.1027693202401079,
+            "rmse": 1.7169706844374228,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.575,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.0531178347357526,
+            "rmse": 1.5878292667587974,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.55,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 0.9199286187744954,
+            "rmse": 1.392139579631872,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.0169023539395161,
+            "rmse": 1.4882159810901017,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 321
+          }
+        ]
+      },
+      "lightgbm": {
+        "mae": 0.9642317986824931,
+        "rmse": 1.493370545619829,
+        "spearman": 0.6450006268856077,
+        "mean_top10_overlap": 0.4388888888888889,
+        "mean_top35_overlap": 0.6158730158730159,
+        "mean_top40_overlap": 0.6166666666666667,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 0.9007811921518838,
+            "rmse": 1.4081500358839094,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 0.9787607753127047,
+            "rmse": 1.5738808013125865,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.031244133609218,
+            "rmse": 1.6447418566494074,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 0.9330551202579654,
+            "rmse": 1.4878001283898374,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 0.8258425208667615,
+            "rmse": 1.197441760230829,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.5428571428571428,
+            "top40_overlap": 0.55,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 0.9406261399435436,
+            "rmse": 1.4383967142719913,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 0.997316040674916,
+            "rmse": 1.486755361943498,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.575,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 0.9442783025592572,
+            "rmse": 1.4167937062783011,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 0.9723047415034551,
+            "rmse": 1.4970712438341356,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.6,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 0.9352354763377613,
+            "rmse": 1.4217206359431518,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.6,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.047104007150644,
+            "rmse": 1.6615022231641465,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.6,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 0.9088948541443977,
+            "rmse": 1.4352089052612793,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 0.99279547218082,
+            "rmse": 1.5949800488432246,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 0.8679053670141463,
+            "rmse": 1.3058824419883137,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.575,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.0979396612049488,
+            "rmse": 1.7114530978201297,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.6,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.031224674346185,
+            "rmse": 1.5696170121173065,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.575,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 0.9183774198217155,
+            "rmse": 1.3892791223687804,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.0226529933317774,
+            "rmse": 1.501153582101454,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.6,
+            "n_players": 321
+          }
+        ]
+      },
+      "gated_blend": {
+        "mae": 0.9542178235203034,
+        "rmse": 1.5433363671805198,
+        "spearman": 0.6526356712433394,
+        "mean_top10_overlap": 0.44999999999999996,
+        "mean_top35_overlap": 0.6158730158730159,
+        "mean_top40_overlap": 0.6222222222222222,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 0.8583466872745859,
+            "rmse": 1.4064771514000443,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.675,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 0.9347337745134882,
+            "rmse": 1.577613614313223,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.675,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.042551925395982,
+            "rmse": 1.7319943919707868,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 0.937246756574612,
+            "rmse": 1.540522971841704,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.675,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 0.808787250495594,
+            "rmse": 1.2335704558132863,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.5142857142857142,
+            "top40_overlap": 0.525,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 0.9271718181953688,
+            "rmse": 1.4769400684403298,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 0.9952358403140459,
+            "rmse": 1.564987659616273,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.575,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 0.9129557862086694,
+            "rmse": 1.4244614194009158,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 0.9615984110837232,
+            "rmse": 1.5584926681003037,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.625,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 0.9046990670400137,
+            "rmse": 1.457116217498299,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.6,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.0414940075589032,
+            "rmse": 1.7082630805554482,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.6,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 0.8996592095242001,
+            "rmse": 1.481648758287866,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.0057191340552336,
+            "rmse": 1.696141370582894,
+            "top10_overlap": 0.2,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.6,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 0.8652112508977589,
+            "rmse": 1.3565329607196304,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.6,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.0803742780945318,
+            "rmse": 1.7516957354579001,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5428571428571428,
+            "top40_overlap": 0.575,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.0360843477397272,
+            "rmse": 1.6308100730568549,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.6,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 0.9046408806337436,
+            "rmse": 1.428148275134249,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.0379742340059248,
+            "rmse": 1.5731183888307572,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.625,
+            "n_players": 321
+          }
+        ]
+      }
+    },
+    "target_assists": {
+      "ridge": {
+        "mae": 1.3475307528745797,
+        "rmse": 2.043324217387017,
+        "spearman": 0.7018541246135755,
+        "mean_top10_overlap": 0.538888888888889,
+        "mean_top35_overlap": 0.6619047619047619,
+        "mean_top40_overlap": 0.6583333333333334,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.1889647707810116,
+            "rmse": 1.783534879256194,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.7714285714285715,
+            "top40_overlap": 0.7,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.346644102030123,
+            "rmse": 2.1371323813202108,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.625,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.5247213794170291,
+            "rmse": 2.396650221099682,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.7,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.426068795241849,
+            "rmse": 2.025948167507559,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.2449328397716073,
+            "rmse": 1.8541839058584901,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.3115241611739175,
+            "rmse": 2.0173950946504586,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.3640726704938808,
+            "rmse": 1.9953030923487454,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.2646683498501854,
+            "rmse": 1.8122163162917206,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.3696114455540411,
+            "rmse": 2.1023371442298733,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.2021532464480043,
+            "rmse": 1.674863896812534,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.6,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.378678044108195,
+            "rmse": 2.1399835224002963,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.3053623748122276,
+            "rmse": 1.7834685856542627,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.725,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.4113578894154764,
+            "rmse": 2.275587138978237,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.2260614036096829,
+            "rmse": 1.7310795046253562,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.3335579740211077,
+            "rmse": 1.9131313939988182,
+            "top10_overlap": 0.8,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.6,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.6112959421256543,
+            "rmse": 2.3105069971315904,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.625,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.3284769119204842,
+            "rmse": 2.3823048229697212,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.3842362709129226,
+            "rmse": 2.1041239480328,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.65,
+            "n_players": 321
+          }
+        ]
+      },
+      "xgboost": {
+        "mae": 1.3552613008177763,
+        "rmse": 2.04736202487416,
+        "spearman": 0.6960014171928227,
+        "mean_top10_overlap": 0.5166666666666666,
+        "mean_top35_overlap": 0.6523809523809523,
+        "mean_top40_overlap": 0.6666666666666666,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.2518488392121303,
+            "rmse": 1.9127341606678432,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.75,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.3238121843414452,
+            "rmse": 1.9759394198841649,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.5201716483820842,
+            "rmse": 2.3801416405997093,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.7,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.4096538266476548,
+            "rmse": 2.0153020986532764,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.1975153791992104,
+            "rmse": 1.7493387882862201,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.329455391237369,
+            "rmse": 2.029290029905996,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.3375092246709113,
+            "rmse": 1.929648891909656,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.7714285714285715,
+            "top40_overlap": 0.725,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.2983671045303344,
+            "rmse": 1.877063633953024,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.3586629149418301,
+            "rmse": 2.080182204383288,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.6,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.2859301446546838,
+            "rmse": 1.8739592618216578,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.575,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.4253583556413651,
+            "rmse": 2.2069664521881545,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.2879234568480356,
+            "rmse": 1.7805406449550731,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.3980889296094658,
+            "rmse": 2.225891429347421,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.725,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.2418269884586335,
+            "rmse": 1.7639606906031007,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.384674664427776,
+            "rmse": 2.1491587051483707,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.5575069032791184,
+            "rmse": 2.1781273372359724,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.3126263626597143,
+            "rmse": 2.224080954534987,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.4553608093120598,
+            "rmse": 2.2612081623708007,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.6,
+            "n_players": 321
+          }
+        ]
+      },
+      "lightgbm": {
+        "mae": 1.3548375834447746,
+        "rmse": 2.023639130310816,
+        "spearman": 0.6928054055807166,
+        "mean_top10_overlap": 0.5333333333333333,
+        "mean_top35_overlap": 0.657142857142857,
+        "mean_top40_overlap": 0.6597222222222223,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.2532613554486973,
+            "rmse": 1.9149318054573867,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.75,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.2929793575001216,
+            "rmse": 1.9017108771091935,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.675,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.4913181111583949,
+            "rmse": 2.3329466102990932,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.7,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.4207990196547213,
+            "rmse": 2.0224124018876863,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.625,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.2148449635321514,
+            "rmse": 1.7633762981006982,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.6,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.3430270002121423,
+            "rmse": 2.031011610566037,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.340883684040794,
+            "rmse": 1.9337305521044896,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.3112883092510677,
+            "rmse": 1.892491467798118,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.3652904684286928,
+            "rmse": 2.076485312472274,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.5714285714285714,
+            "top40_overlap": 0.575,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.2949817400943517,
+            "rmse": 1.8499440449115987,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.575,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.4322330044786125,
+            "rmse": 2.1679167598991365,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.29385988440025,
+            "rmse": 1.7694318582379363,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.75,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.3832650321850475,
+            "rmse": 2.208764536600914,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.725,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.273203036633712,
+            "rmse": 1.8194099114454292,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.6,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.3531927944906406,
+            "rmse": 2.055925339117406,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.5720541963062848,
+            "rmse": 2.1903274328822575,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.301773543837083,
+            "rmse": 2.117571186340055,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.675,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.4374077998755974,
+            "rmse": 2.1662534416127373,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.6,
+            "n_players": 321
+          }
+        ]
+      },
+      "gated_blend": {
+        "mae": 1.3551167057255802,
+        "rmse": 2.0431189115216073,
+        "spearman": 0.7010779001106257,
+        "mean_top10_overlap": 0.5388888888888889,
+        "mean_top35_overlap": 0.6603174603174603,
+        "mean_top40_overlap": 0.6680555555555556,
+        "season_results": [
+          {
+            "season": 2008,
+            "mae": 1.2465694131789116,
+            "rmse": 1.8957074441660053,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.75,
+            "n_players": 331
+          },
+          {
+            "season": 2009,
+            "mae": 1.2842860325923453,
+            "rmse": 1.9144312780794044,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.675,
+            "n_players": 324
+          },
+          {
+            "season": 2010,
+            "mae": 1.5406858276893014,
+            "rmse": 2.4387789692991872,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.7,
+            "n_players": 335
+          },
+          {
+            "season": 2011,
+            "mae": 1.447822778726278,
+            "rmse": 2.076269628033508,
+            "top10_overlap": 0.3,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.625,
+            "n_players": 331
+          },
+          {
+            "season": 2012,
+            "mae": 1.2199032811109964,
+            "rmse": 1.8244452900630765,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.625,
+            "n_players": 340
+          },
+          {
+            "season": 2013,
+            "mae": 1.3760756427908578,
+            "rmse": 2.080051982033406,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.7142857142857143,
+            "top40_overlap": 0.675,
+            "n_players": 325
+          },
+          {
+            "season": 2014,
+            "mae": 1.372015367818618,
+            "rmse": 2.0214501592115353,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.7428571428571429,
+            "top40_overlap": 0.75,
+            "n_players": 334
+          },
+          {
+            "season": 2015,
+            "mae": 1.2641074667853966,
+            "rmse": 1.8741832967757384,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.7,
+            "n_players": 325
+          },
+          {
+            "season": 2016,
+            "mae": 1.3499313277591312,
+            "rmse": 2.1030857337420787,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 326
+          },
+          {
+            "season": 2017,
+            "mae": 1.2640090229748606,
+            "rmse": 1.832069852756643,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.575,
+            "n_players": 327
+          },
+          {
+            "season": 2018,
+            "mae": 1.3854304269722577,
+            "rmse": 2.202310771037604,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.65,
+            "n_players": 325
+          },
+          {
+            "season": 2019,
+            "mae": 1.281538612849976,
+            "rmse": 1.8162993752665035,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.725,
+            "n_players": 324
+          },
+          {
+            "season": 2020,
+            "mae": 1.4171810314100541,
+            "rmse": 2.3022579242165997,
+            "top10_overlap": 0.6,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.725,
+            "n_players": 491
+          },
+          {
+            "season": 2021,
+            "mae": 1.259896157022056,
+            "rmse": 1.830798863295631,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.625,
+            "n_players": 325
+          },
+          {
+            "season": 2022,
+            "mae": 1.3894639684057901,
+            "rmse": 2.0561952074676637,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6857142857142857,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2023,
+            "mae": 1.6009453982793627,
+            "rmse": 2.2703535050364376,
+            "top10_overlap": 0.4,
+            "top35_overlap": 0.6285714285714286,
+            "top40_overlap": 0.65,
+            "n_players": 328
+          },
+          {
+            "season": 2024,
+            "mae": 1.2234451221445384,
+            "rmse": 1.812235524730905,
+            "top10_overlap": 0.5,
+            "top35_overlap": 0.6571428571428571,
+            "top40_overlap": 0.65,
+            "n_players": 330
+          },
+          {
+            "season": 2025,
+            "mae": 1.4380409334262125,
+            "rmse": 2.132599958270866,
+            "top10_overlap": 0.7,
+            "top35_overlap": 0.6,
+            "top40_overlap": 0.625,
+            "n_players": 321
+          }
+        ]
+      }
+    }
+  }
+}

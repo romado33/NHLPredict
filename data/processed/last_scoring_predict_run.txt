@@ -1,0 +1,1646 @@
+﻿
+######################################################################
+  NHL PLAYOFF TOP SCORER PREDICTOR
+  (with bubble teams, roster verification, injury checks)
+######################################################################
+2026-04-07 09:12:16,407 | INFO     | scoring_pipeline | ============================================================
+2026-04-07 09:12:16,407 | INFO     | scoring_pipeline | COMPUTING TEAM EXPECTED GAMES (with bubble teams)
+2026-04-07 09:12:16,407 | INFO     | scoring_pipeline | ============================================================
+
+======================================================================
+  CURRENT STANDINGS & PLAYOFF PROBABILITIES
+======================================================================
+
+  Eastern Conference:
+     1. CAR   IN   PTS=104  GP=77  Proj=110.8  P(playoff)= 95.0%
+     2. TBL   IN   PTS=102  GP=77  Proj=108.6  P(playoff)= 95.0%
+     3. BUF   IN   PTS=102  GP=78  Proj=107.2  P(playoff)= 95.0%
+     4. MTL   IN   PTS=100  GP=77  Proj=106.5  P(playoff)= 95.0%
+     5. PIT   IN   PTS= 96  GP=78  Proj=100.9  P(playoff)= 85.0%
+     6. BOS   IN   PTS= 95  GP=78  Proj= 99.9  P(playoff)= 85.0%
+     7. OTT   IN   PTS= 90  GP=77  Proj= 95.8  P(playoff)= 60.0%
+     8. PHI   IN   PTS= 90  GP=77  Proj= 95.8  P(playoff)= 60.0%
+     9. NYI   OUT  PTS= 89  GP=78  Proj= 93.6  P(playoff)= 12.9% [BUBBLE]
+    10. DET   OUT  PTS= 88  GP=77  Proj= 93.7  P(playoff)= 36.0% [BUBBLE]
+    11. CBJ   OUT  PTS= 88  GP=77  Proj= 93.7  P(playoff)= 36.0% [BUBBLE]
+    12. WSH   OUT  PTS= 87  GP=78  Proj= 91.5  P(playoff)=  8.7% [BUBBLE]
+    13. NJD   OUT  PTS= 83  GP=77  Proj= 88.4  P(playoff)=  1.0%
+    14. TOR   OUT  PTS= 78  GP=77  Proj= 83.1  P(playoff)=  0.0%
+    15. FLA   OUT  PTS= 77  GP=77  Proj= 82.0  P(playoff)=  0.0%
+    16. NYR   OUT  PTS= 75  GP=78  Proj= 78.8  P(playoff)=  0.0%
+
+  Western Conference:
+     1. COL   IN   PTS=110  GP=76  Proj=118.7  P(playoff)= 99.0%
+     2. DAL   IN   PTS=102  GP=77  Proj=108.6  P(playoff)= 99.0%
+     3. MIN   IN   PTS=100  GP=77  Proj=106.5  P(playoff)= 99.0%
+     4. EDM   IN   PTS= 87  GP=77  Proj= 92.6  P(playoff)= 70.0%
+     5. ANA   IN   PTS= 87  GP=77  Proj= 92.6  P(playoff)= 70.0%
+     6. UTA   IN   PTS= 86  GP=76  Proj= 92.8  P(playoff)= 70.0%
+     7. VGK   IN   PTS= 86  GP=77  Proj= 91.6  P(playoff)= 70.0%
+     8. LAK   IN   PTS= 83  GP=77  Proj= 88.4  P(playoff)= 60.0%
+     9. NSH   OUT  PTS= 82  GP=77  Proj= 87.3  P(playoff)= 43.0% [BUBBLE]
+    10. SJS   OUT  PTS= 81  GP=76  Proj= 87.4  P(playoff)= 36.0% [BUBBLE]
+    11. WPG   OUT  PTS= 80  GP=77  Proj= 85.2  P(playoff)= 29.0% [BUBBLE]
+    12. STL   OUT  PTS= 78  GP=76  Proj= 84.2  P(playoff)= 15.0% [BUBBLE]
+    13. SEA   OUT  PTS= 75  GP=76  Proj= 80.9  P(playoff)=  0.0%
+    14. CGY   OUT  PTS= 72  GP=76  Proj= 77.7  P(playoff)=  0.0%
+    15. CHI   OUT  PTS= 70  GP=78  Proj= 73.6  P(playoff)=  0.0%
+    16. VAN   OUT  PTS= 52  GP=76  Proj= 56.1  P(playoff)=  0.0%
+2026-04-07 09:12:16,549 | INFO     | scoring_pipeline | Playoff teams (16): CAR, COL, TBL, DAL, BUF, MIN, MTL, EDM, PIT, ANA, BOS, UTA, OTT, VGK, PHI, LAK
+2026-04-07 09:12:16,549 | INFO     | scoring_pipeline | Bubble teams (8): NSH, DET, CBJ, SJS, WPG, STL, NYI, WSH
+python : 
+At C:\Users\RobDods\AppData\Local\Temp\ps-script-26ab8256-82d1-44e5-a019-c462e693616a.ps1:80 char:91
++ ... NG="utf-8"; python scripts/run_scoring_pipeline.py --predict-only 2>& ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Standings:   0%|          | 0/1 [00:00<?, ?it/s]
+Standings: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00, 135.94it/s]
+2026-04-07 09:12:16,582 | INFO     | src.data.collectors | Saved standings: 32 rows
+
+Team stats (NHL API):   0%|          | 0/1 [00:00<?, ?it/s]
+Team stats (NHL API): 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00, 13.43it/s]
+2026-04-07 09:12:16,660 | INFO     | src.data.collectors | Saved NHL team stats: 32 rows, 196 columns
+
+MoneyPuck stats:   0%|          | 0/1 [00:00<?, ?it/s]
+MoneyPuck stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  7.60it/s]
+MoneyPuck stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  7.59it/s]
+2026-04-07 09:12:16,799 | INFO     | src.data.collectors | Saved MoneyPuck team stats: 160 rows, 107 columns
+
+Goalie stats:   0%|          | 0/1 [00:00<?, ?it/s]
+Goalie stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00, 159.36it/s]
+2026-04-07 09:12:16,810 | INFO     | src.data.collectors | Saved goalie stats: 190 rows
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+
+======================================================================
+  TEAM EXPECTED PLAYOFF GAMES
+======================================================================
+   COL:  18.2 expected games  P(playoff)=99%
+   CAR:  16.7 expected games  P(playoff)=95%
+   TBL:  13.2 expected games  P(playoff)=95%
+   VGK:  12.8 expected games  P(playoff)=70%
+   BUF:  10.6 expected games  P(playoff)=95%
+   EDM:  10.6 expected games  P(playoff)=70%
+   PIT:  10.5 expected games  P(playoff)=85%
+   DAL:   8.7 expected games  P(playoff)=99%
+   MIN:   5.8 expected games  P(playoff)=99%
+   BOS:   5.4 expected games  P(playoff)=85%
+   OTT:   5.3 expected games  P(playoff)=60%
+   UTA:   5.3 expected games  P(playoff)=70%
+   MTL:   5.2 expected games  P(playoff)=95%
+   PHI:   5.1 expected games  P(playoff)=60%
+   ANA:   5.0 expected games  P(playoff)=70%
+   LAK:   4.5 expected games  P(playoff)=60%
+   NSH:   2.4 expected games  P(playoff)=43% [BUBBLE]
+   DET:   2.0 expected games  P(playoff)=36% [BUBBLE]
+   CBJ:   2.0 expected games  P(playoff)=36% [BUBBLE]
+   SJS:   2.0 expected games  P(playoff)=36% [BUBBLE]
+   WPG:   1.6 expected games  P(playoff)=29% [BUBBLE]
+   STL:   0.8 expected games  P(playoff)=15% [BUBBLE]
+   NYI:   0.7 expected games  P(playoff)=13% [BUBBLE]
+   WSH:   0.5 expected games  P(playoff)=9% [BUBBLE]
+2026-04-07 09:12:42,513 | INFO     | scoring_pipeline | Saved expected games for 24 teams (16 playoff + 8 bubble)
+2026-04-07 09:12:42,515 | INFO     | scoring_pipeline | ============================================================
+2026-04-07 09:12:42,515 | INFO     | scoring_pipeline | PREDICTING 2026 PLAYOFF TOP SCORERS
+2026-04-07 09:12:42,515 | INFO     | scoring_pipeline | ============================================================
+2026-04-07 09:12:42,515 | INFO     | scoring_pipeline | Fetching LIVE current-season player stats (timestamp: 2026-04-07T09:12:42.515403)
+2026-04-07 09:12:42,836 | INFO     | scoring_pipeline | Fetched 908 players for 20252026 season
+2026-04-07 09:12:42,933 | INFO     | scoring_pipeline | Playoff teams (16): ANA, BOS, BUF, CAR, COL, DAL, EDM, LAK, MIN, MTL, OTT, PHI, PIT, TBL, UTA, VGK
+2026-04-07 09:12:42,933 | INFO     | scoring_pipeline | Bubble teams (8): CBJ, DET, NSH, NYI, SJS, STL, WPG, WSH
+2026-04-07 09:12:42,933 | INFO     | scoring_pipeline | Total contenders: 24 teams
+
+======================================================================
+  ROSTER VERIFICATION
+======================================================================
+  CAR: 24 players on roster
+  COL: 23 players on roster
+  TBL: 27 players on roster
+  DAL: 29 players on roster
+  BUF: 30 players on roster
+  MIN: 25 players on roster
+  MTL: 26 players on roster
+  EDM: 26 players on roster
+  PIT: 28 players on roster
+  ANA: 26 players on roster
+  BOS: 24 players on roster
+  UTA: 25 players on roster
+  OTT: 27 players on roster
+  VGK: 25 players on roster
+  PHI: 26 players on roster
+  LAK: 26 players on roster
+  NSH: 23 players on roster
+  DET: 24 players on roster
+  CBJ: 27 players on roster
+  SJS: 25 players on roster
+  WPG: 26 players on roster
+  STL: 25 players on roster
+  NYI: 27 players on roster
+  WSH: 24 players on roster
+2026-04-07 09:12:55,167 | INFO     | src.features.player_scoring | Built prediction features: 566 players on 24 teams
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+
+======================================================================
+  INJURY & ROSTER VERIFICATION (top 50 players)
+======================================================================
+2026-04-07 09:13:11,872 | WARNING  | src.data.roster_injury | Player Leon Draisaitl appears inactive: last game 2026-03-15 (23 days ago)
+2026-04-07 09:13:30,883 | WARNING  | src.data.roster_injury | Player Victor Olofsson (ID=8478109) NOT found on COL roster
+  ** Leon Draisaitl            (EDM) - INACTIVE (23d since last game)
+  ** Victor Olofsson           (COL) - NOT ON ROSTER
+
+  2 player(s) flagged.
+
+======================================================================
+  APPLYING INJURY DISCOUNTS & ROSTER EXCLUSIONS
+======================================================================
+  DISCOUNTED: Leon Draisaitl (23d inactive) - 15.2 => 7.6 pts (x50%)
+  EXCLUDED: Victor Olofsson (NOT ON ROSTER) - was 6.5 pts
+
+  1 player(s) excluded, 1 discounted.
+
+======================================================================
+  DATA FRESHNESS VERIFICATION
+======================================================================
+  Data fetched at: 2026-04-07 09:12:42
+  Season: 20252026 (regular season)
+  Total players fetched: 908
+  Players on contender teams: 566
+  Playoff teams (16): ANA, BOS, BUF, CAR, COL, DAL, EDM, LAK, MIN, MTL, OTT, PHI, PIT, TBL, UTA, VGK
+  Bubble teams (8): CBJ, DET, NSH, NYI, SJS, STL, WPG, WSH
+
+======================================================================
+  PREDICTED TOP 35 PLAYOFF SCORERS - 2026 NHL PLAYOFFS
+======================================================================
+   Rk  Player                    Team Pos   Pts      80% CI    G    A ExpGP RegPts Notes
+  ---  ------------------------- ---- --- ----- ----------- ---- ---- ----- ------ ---------------
+    1  Nathan MacKinnon           COL   C  32.9 [19.7-38.6] 10.3 21.2  18.2    122 
+    2  Martin Necas               COL   C  23.0 [15.9-19.7]  7.7 14.9  18.2     94 
+    3  Cale Makar                 COL   D  21.3 [15.9-16.6]  3.1 17.2  18.2     75 
+    4  Nikita Kucherov            TBL   R  20.7 [15.4-18.3]  4.9 14.0  13.2    126 
+    5  Connor McDavid             EDM   C  18.0 [12.9-15.5]  4.0 13.2  10.6    126 
+    6  Sebastian Aho              CAR   C  16.7 [12.0-12.5]  5.1 11.3  16.7     78 
+    7  Seth Jarvis                CAR   C  16.5 [11.3-12.5]  6.3  9.9  16.7     66 
+    8  Jack Eichel                VGK   C  16.4 [11.7-12.6]  4.7 10.9  12.8     82 
+    9  Brock Nelson               COL   C  15.7 [11.4-11.8]  5.8  9.2  18.2     63 
+   10  Jake Guentzel              TBL   C  14.5 [10.1-11.3]  4.2  9.5  13.2     86 
+   11  Andrei Svechnikov          CAR   R  14.3 [ 9.7-10.6]  5.1  8.8  16.7     67 
+   12  Mark Stone                 VGK   R  13.6 [ 8.9-10.2]  4.3  9.1  12.8     67 
+   13  Artturi Lehkonen           COL   L  13.6 [ 9.2-10.1]  4.5  8.7  18.2     46 
+   14  Mitch Marner               VGK   R  13.1 [ 8.9-10.4]  3.4  8.9  12.8     77 
+   15  Nikolaj Ehlers             CAR   L  12.7 [ 8.8- 9.4]  4.3  8.1  16.7     65 
+   16  Brandon Hagel              TBL   L  12.6 [ 8.5- 9.5]  4.3  7.7  13.2     73 
+   17  Evan Bouchard              EDM   D  12.6 [ 7.9- 9.8]  1.3 10.7  10.6     88 
+   18  Valeri Nichushkin          COL   R  12.5 [ 8.2- 9.5]  3.7  8.2  18.2     45 
+   19  Darren Raddysh             TBL   D  11.7 [ 7.3- 9.2]  1.8  9.0  13.2     69 
+   20  Sidney Crosby              PIT   C  11.0 [ 7.0- 9.2]  2.7  6.9  10.5     72 
+   21  Shayne Gostisbehere        CAR   D  10.9 [ 6.4- 9.0]  1.6  8.4  16.7     47 
+   22  Evgeni Malkin              PIT   C  10.8 [ 6.0- 9.1]  2.3  7.1  10.5     59 
+   23  Gabriel Landeskog          COL   L   9.9 [ 6.3- 7.4]  2.7  6.7  18.2     33 
+   24  Pavel Dorofeyev            VGK   R   9.8 [ 6.4- 7.2]  3.9  5.2  12.8     61 
+   25  Jackson Blake              CAR   R   9.6 [ 6.5- 6.8]  3.0  6.3  16.7     49 
+   26  Brayden Point              TBL   C   9.6 [ 6.2- 7.0]  2.7  6.4  13.2     48 
+   27  Mikko Rantanen             DAL   R   9.4 [ 6.3- 7.0]  1.9  6.8   8.7     73 
+   28  Erik Karlsson              PIT   D   9.4 [ 5.4- 7.9]  0.9  7.4  10.5     64 
+   29  Jason Robertson            DAL   L   9.2 [ 6.2- 7.1]  2.9  5.7   8.7     89 
+   30  Zach Hyman                 EDM   L   9.1 [ 5.8- 6.5]  3.8  4.9  10.6     51 
+   31  Tomas Hertl                VGK   C   9.0 [ 5.5- 6.9]  3.0  5.4  12.8     55 
+   32  Bryan Rust                 PIT   R   8.9 [ 5.6- 7.0]  2.7  5.3  10.5     64 
+   33  Rasmus Dahlin              BUF   D   8.8 [ 5.4- 6.4]  0.8  7.5  10.6     70 
+   34  Tage Thompson              BUF   C   8.5 [ 5.6- 5.9]  3.0  5.1  10.6     78 
+   35  Wyatt Johnston             DAL   C   8.5 [ 5.8- 6.2]  3.1  4.9   8.7     80 
+
+  Predictions saved to data/processed/scoring_predictions_2026.csv
+  Top 35 saved to data/processed/top35_scorers_2026.csv
+
+######################################################################
+  SCORING PIPELINE COMPLETE
+######################################################################

@@ -1,0 +1,120 @@
+rank_overall,rank_f,rank_c,rank_lw,rank_rw,rank_d,rank_g,player,team,yahoo_pos,nhl_pos,proj_fp,last_year_fp,last_year_gp,proj_gp,injury,note
+1,1,,,1,,,Alex DeBrincat,DET,W,RW,711.6,753.5,82,84,healthy,Healthy. Goal-heavy 41 G / 287 SOG. This scoring loves him more than our 80 NHL pts.
+2,2,1,,,,,Dylan Larkin,DET,C,C,693.4,657.5,74,79,DTD,DTD -3 GP (79). DET opener Oct 2 uncertain; 1 extra game not a fade. 34 G / 9 GWG. KEEP.
+3,3,,1,,,,Artemi Panarin,LAK,W,LW,684.1,641.0,78,82,healthy,Healthy. Our 88. Fiala out to Nov = extra PP. Best available LW talent.
+4,4,,2,,,,Filip Forsberg,NSH,W,LW,677.6,660.0,82,84,healthy,"Healthy. 40 G, 246 SOG. Our 77 pts; G=7/GWG/SOG keep him elite here."
+5,5,2,,,,,Mark Scheifele,WPG,C,C,675.0,776.5,82,82,healthy,Healthy. Our 87 pts (SH% down from 20.6). Still 1C next to Connor.
+6,,,,,1,,Zach Werenski,CBJ,D,D,661.7,646.0,75,82,healthy,"Healthy. D1 on board. Norris year, 260 SOG. Take as 1D/early F-flex."
+7,6,3,,,,,Bo Horvat,NYI,C,C,638.0,577.0,68,78,healthy,Healthy. 31 G / 7 GWG / 226 SOG. Goal C; 68 GP last year.
+8,7,4,,,,,Mika Zibanejad,NYR,"C,W",C,635.9,611.5,81,82,healthy,Healthy. Our 77. Do NOT copy -20; PP1 NYR with Dorofeyev shooter.
+9,8,,3,,,,Juraj Slafkovsky,MTL,W,LW,634.1,648.0,82,84,healthy,"Healthy. 30 G / 15 PPG last year. Volume 3rd-year leap, not a lock."
+10,9,5,,,,,Steven Stamkos,NSH,"C,W",C,633.0,631.0,82,80,healthy,Healthy. 42 G / 14 PPG / 10 GWG. This scoring's age cheat code.
+11,10,6,,,,,Nick Schmaltz,UTA,"C,W",C,629.3,683.0,82,82,healthy,Healthy. Last-year FP 683 is GWG/+17 luck. Regress; still useful C/W.
+12,11,,4,,,,Andrei Svechnikov,CAR,W,LW,626.2,637.5,79,80,healthy,Healthy. 31 G / 66 PIM / 12 PPG. CAR PP; Jarvis out weeks = bump.
+13,12,7,,,,,Aleksander Barkov,FLA,C,C,624.4,0.0,0,82,healthy,"BACK healthy 82 GP. Yahoo NA was 0 GP last year, not now. FLA roster. 2024-25: 20/51/71 in 67; mix*80 pts. 1C."
+14,13,,5,,,,Lucas Raymond,DET,W,LW,622.9,599.5,80,82,healthy,Healthy. Our 79. Larkin DTD can bump early usage with DeBrincat.
+15,,,,,,1,Jet Greaves,CBJ,G,G,619.9,0,0,55,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 55 GP, 29 W / 1474 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+16,14,,,2,,,Will Smith,SJS,W,RW,619.9,494.0,69,80,healthy,Healthy. Celebrini stack. Our 76. Only 69 GP last year; 80 GP is the bet.
+17,15,,,3,,,Kirill Marchenko,CBJ,W,RW,614.8,611.0,76,80,healthy,Healthy. CBJ PP1 with Werenski. 7 GWG. Goal/SOG profile.
+18,16,,6,,,,Pavel Dorofeyev,NYR,W,LW,611.9,597.0,82,82,healthy,Healthy. 37 G / 20 PPG / 230 SOG. Goal/PPG monster; assists thin.
+19,17,8,,,,,Logan Cooley,UTA,C,C,601.4,385.0,54,78,healthy,Healthy. Our 74. 23.5 SH% last year will not repeat; Keller/Guenther PP.
+20,18,9,,,,,Brock Nelson,COL,C,C,594.1,623.0,81,82,healthy,Healthy. 33 G / 9 GWG on COL 2C. MacKinnon leftovers still count.
+21,,,,,2,,Jakob Chychrun,WSH,D,D,593.9,630.5,80,82,healthy,Healthy. 26 G / 221 SOG / 8 GWG. Best goal-scoring D after Werenski.
+22,19,10,,,,,Evgeni Malkin,PIT,"C,W",C,589.8,545.0,56,68,healthy,Healthy. 19 G / 42 A in 56. Age 40; 68 GP. PIT PP still.
+23,20,,,4,,,Alex Tuch,WSH,W,RW,588.4,633.5,79,80,healthy,Healthy. WSH now. 33 G / 57 PIM / 3 SHG. Goal+PIM profile.
+24,21,11,,,,,Trevor Zegras,PHI,"C,W",C,586.1,590.5,81,82,healthy,Healthy. 26 G / 62 PIM. PHI PP1 with Konecny; bounce-back year.
+25,22,,,5,,,Drake Batherson,OTT,W,RW,581.3,591.5,79,80,healthy,Healthy. 33 G / 13 PPG. Stutzle still feeds him; Brady gone is a nibble.
+26,23,,7,,,,Nikolaj Ehlers,CAR,W,LW,578.8,609.5,82,82,healthy,Healthy. 26 G / 19 PPA / 6 GWG. CAR PP2; Jarvis bump.
+27,,,,,,2,Karel Vejmelka,UTA,G,G,578.6,0,0,55,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 55 GP, 29 W / 1430 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+28,,,,,,3,Juuse Saros,NSH,G,G,577.8,0,0,60,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 60 GP, 27 W / 1626 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+29,24,,8,,,,Zach Hyman,EDM,W,LW,569.4,490.5,58,74,healthy,Healthy. 31 G in 58. McDavid PP net-front. GP 74 not 84.
+30,25,,,6,,,Bryan Rust,PIT,W,RW,568.9,555.5,72,76,DTD,DTD -4 GP (76). Evaluated after Sat preseason; not on IR. 29 G / 16 PPA when healthy. DRAFTABLE.
+31,26,,,7,,,Travis Konecny,PHI,W,RW,567.9,594.0,77,80,healthy,Healthy. 27 G / 59 PIM / +14. PHI PP with Zegras.
+32,27,12,,,,,Nico Hischier,NJD,C,C,566.5,572.5,82,82,healthy,Healthy. 28 G / 211 SOG. NJ 1C; Hughes takes PP cream.
+33,,,,,,4,John Gibson,DET,G,G,558.2,0,0,55,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 55 GP, 26 W / 1463 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+34,28,13,,,,,Dylan Cozens,OTT,C,C,557.9,555.5,82,82,healthy,Healthy. 28 G / 13 PPG / 59 PIM. OTT 2C; goal/PIM C.
+35,29,14,,,,,Ryan O'Reilly,NSH,C,C,556.9,606.0,81,80,healthy,Healthy. 25 G / 49 A / 8 GWG. NSH 1C; quiet 68-pt year.
+36,,,,,,5,Sergei Bobrovsky,TOR,G,G,555.2,0,0,52,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 52 GP, 28 W / 1353 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+37,30,15,,,,,Sam Bennett,FLA,C,C,554.5,548.5,76,78,healthy,Healthy. 82 PIM + 5 GWG. Cats help; 26 G not a 1C.
+38,31,16,,,,,Adam Fantilli,CBJ,C,C,550.1,494.0,82,84,healthy,Healthy. 24 G / 214 SOG. CBJ 1C; year-3 leap possible.
+39,32,,9,,,,Alex Ovechkin,WSH,W,LW,549.0,571.0,82,79,DTD,DTD -3 GP (79). Carbery expects Oct 2 opener. 32 G / 244 SOG still. DRAFTABLE.
+40,,,,,,6,Jakub Dobes,MTL,G,G,548.5,0,0,50,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 50 GP, 28 W / 1305 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+41,33,,,8,,,Mark Stone,VGK,W,RW,546.9,606.0,60,68,healthy,"Healthy. 28 G / 45 A in 60. Elite rate, 68 GP cap. VGK PP."
+42,34,17,,,,,John Tavares,TOR,C,C,545.9,538.0,82,82,healthy,Healthy. 31 G ironman. Do NOT copy -28. TOR 2C; age 36.
+43,35,18,,,,,Morgan Geekie,BOS,"C,W",C,543.5,586.5,81,80,healthy,"Healthy. 39 G on likely SH% spike. 30 G is the mean, not 39."
+44,,,,,,7,Jacob Markstrom,FLA,G,G,540.8,0,0,52,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 52 GP, 29 W / 1274 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+45,,,,,,8,Lukas Dostal,ANA,G,G,536.8,0,0,55,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 55 GP, 26 W / 1507 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+46,36,19,10,,,,Dylan Holloway,STL,"C,W",LW,527.8,448.0,59,76,healthy,Healthy. 59 GP rate was real. STL 1-line; not a 70-pt projection.
+47,,,,,,9,Linus Ullmark,OTT,G,G,527.5,0,0,50,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 50 GP, 28 W / 1220 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+48,37,,11,,,,Jesper Bratt,NJD,W,LW,525.2,526.0,82,82,healthy,Healthy. Hughes stack. 22 G only; this format wants more shot/goal.
+49,38,,12,,,,Brad Marchand,FLA,W,LW,516.5,440.0,52,66,IR-LT,"IR-LT -12 GP (66). Out October, return ~Nov 2. Draftable mid/late with IR slot, not AVOID-forever."
+50,39,20,,,,,Pavel Zacha,BOS,"C,W",C,515.7,539.5,78,80,healthy,Healthy. 30 G / 11 PPG. BOS 2C next to Pasta; sneaky C/W.
+51,,,,,,10,Jesper Wallstedt,MIN,G,G,514.7,0,0,45,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 45 GP, 26 W / 1166 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+52,40,,,9,,,Beckett Sennecke,ANA,W,RW,514.3,509.5,82,82,healthy,Healthy. Year-2 ANA. 23 G / 197 SOG; assists more than finishing.
+53,,,,,,11,Spencer Knight,CHI,G,G,514.2,0,0,55,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 55 GP, 21 W / 1617 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+54,,,,,3,,Moritz Seider,DET,D,D,514.1,541.5,82,84,healthy,"Healthy. 82 GP, 187 SOG, 57 PIM. D volume even if 10 G."
+55,41,21,,,,,Gabriel Vilardi,WPG,"C,W",C,510.2,527.0,82,80,healthy,Healthy. 30 G / 13 PPG next to Scheifele/Connor. WPG PP.
+56,42,22,,,,,J.T. Miller,NYR,"C,W",C,509.4,394.0,68,76,healthy,Healthy. Do NOT copy -30. NYR 2C/W; Athletic 69 pts. 68 GP last year.
+57,43,,13,,,,Timo Meier,NJD,W,LW,503.5,433.5,77,80,healthy,"Healthy. 269 SOG, only 24 G. Shot streamer; finishing died. Not a star."
+58,44,23,,,,,Joel Eriksson Ek,MIN,C,C,501.6,492.0,70,76,healthy,"Healthy. 194 SOG, two-way. 19 G; MIN 2C not a scorer."
+59,45,,14,,,,Matthew Knies,TOR,W,LW,497.4,450.0,79,80,healthy,Healthy. Do NOT copy -30. Matthews stack; 23 G not 35.
+60,46,24,,,,,Quinton Byfield,LAK,C,C,496.5,460.0,79,80,healthy,Healthy. 24 G / 25 A. Usage up with Panarin; finishing still meh.
+61,47,25,,,,,Roope Hintz,DAL,C,C,494.3,393.0,53,72,healthy,"Healthy. 53 GP last year. DAL 2C; GP bounce if healthy, not a 70-pt lock."
+62,,,,,4,,Miro Heiskanen,DAL,D,D,490.0,503.0,77,80,healthy,Healthy. 54 A / 26 PPA. DAL PP; 9 G. Stable 2D.
+63,48,,15,,,,Carter Verhaeghe,FLA,W,LW,488.7,459.5,77,78,healthy,Healthy. Barkov BACK helps. 25 G; FLA crowded with Tkachuks.
+64,,,,,5,,Charlie McAvoy,BOS,D,D,488.5,500.5,69,76,SUSP,"Healthy. Yahoo NA = 6-game slash suspension, not injury. On BOS roster. 76 GP."
+65,,,,,6,,Erik Karlsson,PIT,D,D,485.8,516.0,75,78,healthy,Healthy. 15 G / 176 SOG / 22 PPA. PIT PP1 shots+points D.
+66,,,,,7,,Roman Josi,NSH,D,D,485.4,434.5,68,74,healthy,"Healthy. Age/NSH. 68 GP last year, -15. Still PP1 shots; not 70 pts."
+67,,,,,,12,Dustin Wolf,CGY,G,G,483.4,0,0,55,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 55 GP, 20 W / 1568 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+68,,,,,,13,Carter Hart,VGK,G,G,481.9,0,0,45,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 45 GP, 27 W / 1058 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+69,49,26,,10,,,Rickard Rakell,PIT,"C,W",RW,480.1,406.0,60,72,healthy,"Healthy. 60 GP last year, 24 G. PIT PP; not a full-season lock."
+70,50,,,11,,,Jimmy Snuggerud,STL,W,RW,478.3,470.5,70,76,healthy,Healthy. Year-2 STL. 21 G in 70; upside if 1-line sticks.
+71,51,,,12,,,Jackson Blake,CAR,W,RW,476.9,474.0,81,82,healthy,"Healthy. CAR 22 G / 174 SOG. Depth scorer, not PP1."
+72,52,,16,,,,Alexis Lafreniere,NYR,W,LW,473.2,470.0,82,82,healthy,Healthy. 24 G floor. NYR depth; Dorofeyev/Zibanejad eat PP.
+73,53,27,,,,,Dylan Strome,WSH,C,C,473.0,486.5,80,80,healthy,Healthy. WSH 1C with Tuch. 19 G; PP but not a 30-goal guy.
+74,54,,17,,,,Aliaksei Protas,WSH,W,LW,471.5,481.5,76,78,healthy,Healthy. 25 G / +20 / 2 SHG. WSH even-strength; no PP.
+75,55,28,,,,,Ryan Nugent-Hopkins,EDM,"C,W",C,470.8,439.5,72,76,healthy,Healthy. EDM PP with McDavid. 20 G / 18 PPA. 3C/W.
+76,,,,,,14,Jake Allen,NJD,G,G,467.6,0,0,45,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 45 GP, 23 W / 1156 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+77,,,,,8,,Jake Sanderson,OTT,D,D,466.7,453.5,67,78,healthy,Healthy. 14 G / 67 GP. GP bounce; not Werenski/Chychrun shots.
+78,56,,,13,,,Josh Doan,BUF,W,RW,463.6,458.0,82,82,healthy,Healthy. BUF 25 G in 82. Depth; Tuch gone may add PP crumbs.
+79,57,29,,,,,Nazem Kadri,COL,"C,W",C,463.6,392.5,77,78,healthy,Healthy. Do NOT copy -30. COL 2C behind MacKinnon/Necas.
+80,,,,,9,,Mikhail Sergachev,UTA,D,D,462.8,478.5,78,80,healthy,Healthy. UTA PP1. 10 G / 49 A. Stable 2D.
+81,,,,,10,,Adam Fox,NYR,D,D,462.3,392.5,55,72,healthy,Healthy. 55 GP last year. Rate still PP1 NYR; GP is the tax.
+82,,,,,,15,Joel Hofer,STL,G,G,460.3,0,0,45,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 45 GP, 22 W / 1220 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+83,,,,,11,,John Carlson,TBL,D,D,459.8,475.5,71,76,healthy,Healthy. TB now. 14 G / 46 A in 71. PP with Kucherov leftovers.
+84,58,,18,,,,Zach Benson,BUF,W,LW,459.4,424.0,65,74,healthy,"Healthy. 65 GP last year, +27 luck. 13 G; don't buy the plus-minus."
+85,59,30,,,,,Vincent Trocheck,UTA,C,C,458.5,415.0,67,74,healthy,"Healthy. UTA now. 67 GP last year, 16 G. 3C/2C; PIM help."
+86,,,,,,16,Anton Forsberg,LAK,G,G,458.1,0,0,45,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 45 GP, 22 W / 1179 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+87,,,,,,17,Dan Vladar,PHI,G,G,456.8,0,0,45,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 45 GP, 23 W / 1120 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+88,60,,,14,,,JJ Peterka,BOS,W,RW,455.3,432.5,82,82,healthy,Healthy. BOS 25 G. Pasta leftovers; 22 A thin.
+89,,,,,,18,Ukko-Pekka Luukkonen,BUF,G,G,447.3,0,0,45,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 45 GP, 23 W / 1138 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+90,61,,19,,,,William Eklund,OTT,W,LW,446.4,377.0,78,80,healthy,Healthy. OTT now with Stutzle. Do NOT copy -31. Usage up.
+91,62,,20,,,,Mason Marchment,SJS,W,LW,442.9,437.5,68,74,healthy,Healthy. SJ 19 G / 56 PIM. Depth winger.
+92,,,,,,19,Stuart Skinner,WPG,G,G,440.0,0,0,50,inferred,"INFERRED FA (not in Yahoo F/D paste). Athletic 50 GP, 25 W / 1155 SV. This league: W=10 L=-7 SV=0.5. Stars (Vasy/Hellebuyck/Shesterkin/Thompson/Oettinger/Sorokin/Swayman/Wedgewood) assumed kept."
+93,,,,,12,,Josh Morrissey,WPG,D,D,436.3,446.0,77,80,healthy,Healthy. WPG PP. 14 G / 41 A stable.
+94,63,31,,,,,Logan Stankoven,CAR,"C,W",C,431.5,422.0,81,82,healthy,Healthy. CAR depth. 21 G; Jarvis out helps a little.
+95,64,,,15,,,Porter Martone,PHI,W,RW,430.1,99.0,9,70,tiny,Tiny sample: 9 GP. Flyer after real NHL wingers.
+96,65,32,,,,,Elias Pettersson,VAN,C,C,429.8,340.0,74,76,healthy,Healthy. Do NOT copy -30. VAN reset; 15 G is the floor risk.
+97,,,,,13,,Shayne Gostisbehere,CAR,D,D,426.9,407.0,55,70,healthy,"Healthy. 55 GP last year, 13 G / 12 PPA. CAR PP2; GP bounce."
+98,,,,,14,,Brock Faber,MIN,D,D,423.8,466.5,80,78,DTD,DTD -4 GP (78). Precautionary puck-to-head Fri. MIN 2D behind Hughes. DRAFTABLE.
+99,,,,,15,,Dougie Hamilton,NJD,D,D,422.6,399.5,77,78,healthy,Healthy. 12 G / 203 SOG. NJ PP2; shot D not 50 pts.
+100,66,,,16,,,Jordan Kyrou,WSH,W,RW,417.5,378.5,72,76,healthy,Healthy. WSH now. 18 G in 72. Role down; don't chase name.
+101,67,33,,,,,Mathew Barzal,NYI,"C,W",C,415.6,613.0,81,55,IR-NR,IR-NR stash. Not on NYI active roster (knee). 55 GP cut. 53 A when healthy. IR slot only.
+102,68,,,17,,,Valeri Nichushkin,CBJ,W,RW,413.6,416.0,72,74,healthy,"Healthy. CBJ now, not COL. 17 G; role down, don't chase old name."
+103,69,,21,,,,Gavin McKenna,TOR,W,LW,410.7,0.0,0,72,tiny,Tiny sample: zero NHL GP. Athletic likes him; wait. Not an injury.
+104,70,,22,,,,Gabriel Landeskog,COL,W,LW,410.5,391.0,60,68,healthy,Healthy. COL 14 G in 60. Depth next to MacKinnon; 68 GP.
+105,,,,,16,,Brandt Clarke,LAK,D,D,401.7,405.5,82,82,healthy,Healthy. LA 8 G / 63 PIM. PP2; volume PIM D.
+106,,,,,17,,Noah Dobson,MTL,D,D,398.1,396.0,80,82,healthy,Healthy. MTL 2D. Hutson eats PP1; 12 G floor.
+107,,,,,18,,Jackson LaCombe,ANA,D,D,396.2,426.5,82,82,healthy,Healthy. 48 A / 82 GP ANA PP. Assist D; fewer goals than Chychrun.
+108,71,34,,,,,Matt Duchene,DAL,"C,W",C,390.3,342.5,57,68,DTD,DTD -2 GP (68). Gulutzan expects Oct 2 opener. DAL 3C. DRAFTABLE.
+109,,,,,19,,Brandon Montour,SEA,D,D,380.6,297.0,64,72,healthy,Healthy. SEA 11 G in 64. PP; not a 50-pt D.
+110,72,,,18,,,Egor Chinakhov,PIT,W,RW,374.4,356.0,72,74,healthy,Healthy. PIT 21 G in 13:28. Depth; Crosby leftovers.
+111,73,,23,,,,Ivar Stenberg,SJS,W,LW,370.5,0.0,0,70,tiny,Tiny sample: zero NHL GP. SJ prospect. Not an injury.
+112,,,,,20,,Shea Theodore,VGK,D,D,361.1,364.0,70,74,healthy,"Healthy. 70 GP last year, 10 G. VGK 2D behind Pietrangelo role."
+113,74,,,19,,,Gabe Perreault,NYR,W,RW,348.5,229.5,49,68,tiny,Tiny sample: 49 GP / 12 G. NYR prospect.
+114,75,35,,,,,Anton Frondell,CHI,C,C,345.0,73.0,12,65,tiny,"Tiny sample: 12 GP CHI. Prospect, not tonight."
+115,,,,,21,,Victor Hedman,TBL,D,D,331.9,126.0,33,72,healthy,"Healthy 72 GP. Last year 33 GP was leave/elbow, not current. Still not a 1D."
+116,,,,,22,,MacKenzie Weegar,UTA,D,D,328.6,253.0,79,80,healthy,Healthy. Do NOT copy -33. 4 G / 88 PIM. PIM streamer only.
+117,,,,,23,,Cole Hutson,WSH,D,D,323.8,76.0,14,70,tiny,"Tiny sample: 14 GP. Lane's brother, not Lane."
+118,76,36,,,,,Michael Misa,SJS,C,C,313.2,169.0,45,70,tiny,Tiny sample: 45 GP / 9 G at 12:48. SJ 3C.
+119,,,,,24,,Seth Jones,FLA,D,D,308.7,251.0,52,68,healthy,Healthy. 52 GP last year FLA. PP2; 7 G. Not a 1D.

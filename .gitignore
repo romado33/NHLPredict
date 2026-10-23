@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Regenerated NHL API cache
+data/cache/
+
+# Local scratch scripts and extracts
+/tmp_*
+/_tmp_*
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store

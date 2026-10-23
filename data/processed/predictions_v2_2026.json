@@ -1,0 +1,466 @@
+{
+  "season_end_year": 2026,
+  "generated_at": "2026-04-16T16:37:45.089831+00:00",
+  "model_manifest": {
+    "kind": "v2_team_series_models",
+    "generated_at_utc": "2026-04-16T16:37:45.089856+00:00",
+    "models_dir": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models",
+    "files": {
+      "v2_models.joblib": {
+        "path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models\\v2_models.joblib",
+        "sha256": "227c7a9063d25339cd11b6e43e570b5eaf45d0597034b40fabf00346d59aac45",
+        "exists": true
+      },
+      "v2_features.joblib": {
+        "path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models\\v2_features.joblib",
+        "sha256": "7f608f2b78b5dfdaea71558255161862484d11d3f4d35a6d24f18e9827b8d53b",
+        "exists": true
+      },
+      "v2_blend_weights.joblib": {
+        "path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models\\v2_blend_weights.joblib",
+        "sha256": "232f9c9b5460f82751387f539710407dfd920a2b673eaa4cb1085de8d7e4207d",
+        "exists": true
+      }
+    }
+  },
+  "east_r1": [
+    [
+      "CAR",
+      "OTT"
+    ],
+    [
+      "PIT",
+      "PHI"
+    ],
+    [
+      "BUF",
+      "BOS"
+    ],
+    [
+      "TBL",
+      "MTL"
+    ]
+  ],
+  "west_r1": [
+    [
+      "COL",
+      "LAK"
+    ],
+    [
+      "DAL",
+      "MIN"
+    ],
+    [
+      "VGK",
+      "UTA"
+    ],
+    [
+      "EDM",
+      "ANA"
+    ]
+  ],
+  "east_r1_winners": [
+    "CAR",
+    "PIT",
+    "BUF",
+    "TBL"
+  ],
+  "west_r1_winners": [
+    "COL",
+    "DAL",
+    "VGK",
+    "EDM"
+  ],
+  "east_r2_winners": [
+    "CAR",
+    "BUF"
+  ],
+  "west_r2_winners": [
+    "COL",
+    "VGK"
+  ],
+  "east_champ": "CAR",
+  "west_champ": "COL",
+  "champion": "COL",
+  "series": [
+    {
+      "round": "First Round",
+      "conference": "Eastern",
+      "higher_seed": "CAR",
+      "lower_seed": "OTT",
+      "predicted_winner": "CAR",
+      "confidence_in_predicted_winner_pct": 69.5,
+      "blended_model_prob_higher_seed_wins_series": 0.584228,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.69502,
+        "expected_games": 5.73,
+        "probability_higher_seed_wins_in_4": 0.11344,
+        "probability_higher_seed_wins_in_5": 0.20428,
+        "probability_higher_seed_wins_in_6": 0.18578,
+        "probability_higher_seed_wins_in_7": 0.19152,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "First Round",
+      "conference": "Eastern",
+      "higher_seed": "PIT",
+      "lower_seed": "PHI",
+      "predicted_winner": "PIT",
+      "confidence_in_predicted_winner_pct": 88.32,
+      "blended_model_prob_higher_seed_wins_series": 0.699043,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.88316,
+        "expected_games": 5.382,
+        "probability_higher_seed_wins_in_4": 0.23174,
+        "probability_higher_seed_wins_in_5": 0.30446,
+        "probability_higher_seed_wins_in_6": 0.20034,
+        "probability_higher_seed_wins_in_7": 0.14662,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "First Round",
+      "conference": "Eastern",
+      "higher_seed": "BUF",
+      "lower_seed": "BOS",
+      "predicted_winner": "BUF",
+      "confidence_in_predicted_winner_pct": 95.44,
+      "blended_model_prob_higher_seed_wins_series": 0.780755,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.9544,
+        "expected_games": 5.019,
+        "probability_higher_seed_wins_in_4": 0.35256,
+        "probability_higher_seed_wins_in_5": 0.34214,
+        "probability_higher_seed_wins_in_6": 0.16894,
+        "probability_higher_seed_wins_in_7": 0.09076,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "First Round",
+      "conference": "Eastern",
+      "higher_seed": "TBL",
+      "lower_seed": "MTL",
+      "predicted_winner": "TBL",
+      "confidence_in_predicted_winner_pct": 77.3,
+      "blended_model_prob_higher_seed_wins_series": 0.625529,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.77298,
+        "expected_games": 5.633,
+        "probability_higher_seed_wins_in_4": 0.15112,
+        "probability_higher_seed_wins_in_5": 0.24112,
+        "probability_higher_seed_wins_in_6": 0.1995,
+        "probability_higher_seed_wins_in_7": 0.18124,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "First Round",
+      "conference": "Western",
+      "higher_seed": "COL",
+      "lower_seed": "LAK",
+      "predicted_winner": "COL",
+      "confidence_in_predicted_winner_pct": 98.43,
+      "blended_model_prob_higher_seed_wins_series": 0.881977,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.98432,
+        "expected_games": 4.526,
+        "probability_higher_seed_wins_in_4": 0.48026,
+        "probability_higher_seed_wins_in_5": 0.32876,
+        "probability_higher_seed_wins_in_6": 0.12892,
+        "probability_higher_seed_wins_in_7": 0.04638,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "First Round",
+      "conference": "Western",
+      "higher_seed": "DAL",
+      "lower_seed": "MIN",
+      "predicted_winner": "DAL",
+      "confidence_in_predicted_winner_pct": 74.82,
+      "blended_model_prob_higher_seed_wins_series": 0.611366,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.74824,
+        "expected_games": 5.67,
+        "probability_higher_seed_wins_in_4": 0.13622,
+        "probability_higher_seed_wins_in_5": 0.23032,
+        "probability_higher_seed_wins_in_6": 0.1941,
+        "probability_higher_seed_wins_in_7": 0.1876,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "First Round",
+      "conference": "Western",
+      "higher_seed": "VGK",
+      "lower_seed": "UTA",
+      "predicted_winner": "VGK",
+      "confidence_in_predicted_winner_pct": 92.16,
+      "blended_model_prob_higher_seed_wins_series": 0.735796,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.9216,
+        "expected_games": 5.227,
+        "probability_higher_seed_wins_in_4": 0.28424,
+        "probability_higher_seed_wins_in_5": 0.32516,
+        "probability_higher_seed_wins_in_6": 0.19092,
+        "probability_higher_seed_wins_in_7": 0.12128,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "First Round",
+      "conference": "Western",
+      "higher_seed": "EDM",
+      "lower_seed": "ANA",
+      "predicted_winner": "EDM",
+      "confidence_in_predicted_winner_pct": 85.32,
+      "blended_model_prob_higher_seed_wins_series": 0.675709,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.85322,
+        "expected_games": 5.471,
+        "probability_higher_seed_wins_in_4": 0.2046,
+        "probability_higher_seed_wins_in_5": 0.28472,
+        "probability_higher_seed_wins_in_6": 0.20334,
+        "probability_higher_seed_wins_in_7": 0.16056,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "Second Round",
+      "conference": "Eastern",
+      "higher_seed": "CAR",
+      "lower_seed": "PIT",
+      "predicted_winner": "CAR",
+      "confidence_in_predicted_winner_pct": 82.46,
+      "blended_model_prob_higher_seed_wins_series": 0.656637,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.82458,
+        "expected_games": 5.538,
+        "probability_higher_seed_wins_in_4": 0.17986,
+        "probability_higher_seed_wins_in_5": 0.27336,
+        "probability_higher_seed_wins_in_6": 0.20192,
+        "probability_higher_seed_wins_in_7": 0.16944,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "Second Round",
+      "conference": "Eastern",
+      "higher_seed": "BUF",
+      "lower_seed": "TBL",
+      "predicted_winner": "BUF",
+      "confidence_in_predicted_winner_pct": 65.17,
+      "blended_model_prob_higher_seed_wins_series": 0.563016,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.65172,
+        "expected_games": 5.766,
+        "probability_higher_seed_wins_in_4": 0.09774,
+        "probability_higher_seed_wins_in_5": 0.18594,
+        "probability_higher_seed_wins_in_6": 0.17816,
+        "probability_higher_seed_wins_in_7": 0.18988,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "Second Round",
+      "conference": "Western",
+      "higher_seed": "COL",
+      "lower_seed": "DAL",
+      "predicted_winner": "COL",
+      "confidence_in_predicted_winner_pct": 97.54,
+      "blended_model_prob_higher_seed_wins_series": 0.832765,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.9754,
+        "expected_games": 4.766,
+        "probability_higher_seed_wins_in_4": 0.42602,
+        "probability_higher_seed_wins_in_5": 0.34078,
+        "probability_higher_seed_wins_in_6": 0.14562,
+        "probability_higher_seed_wins_in_7": 0.06298,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "Second Round",
+      "conference": "Western",
+      "higher_seed": "VGK",
+      "lower_seed": "EDM",
+      "predicted_winner": "VGK",
+      "confidence_in_predicted_winner_pct": 94.58,
+      "blended_model_prob_higher_seed_wins_series": 0.766029,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.94576,
+        "expected_games": 5.089,
+        "probability_higher_seed_wins_in_4": 0.32958,
+        "probability_higher_seed_wins_in_5": 0.33782,
+        "probability_higher_seed_wins_in_6": 0.17706,
+        "probability_higher_seed_wins_in_7": 0.1013,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "Conference Finals",
+      "conference": "Eastern",
+      "higher_seed": "CAR",
+      "lower_seed": "BUF",
+      "predicted_winner": "CAR",
+      "confidence_in_predicted_winner_pct": 55.99,
+      "blended_model_prob_higher_seed_wins_series": 0.519758,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.5599,
+        "expected_games": 5.808,
+        "probability_higher_seed_wins_in_4": 0.0709,
+        "probability_higher_seed_wins_in_5": 0.14998,
+        "probability_higher_seed_wins_in_6": 0.1521,
+        "probability_higher_seed_wins_in_7": 0.18692,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "Conference Finals",
+      "conference": "Western",
+      "higher_seed": "COL",
+      "lower_seed": "VGK",
+      "predicted_winner": "COL",
+      "confidence_in_predicted_winner_pct": 97.92,
+      "blended_model_prob_higher_seed_wins_series": 0.849228,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.9792,
+        "expected_games": 4.685,
+        "probability_higher_seed_wins_in_4": 0.44432,
+        "probability_higher_seed_wins_in_5": 0.34116,
+        "probability_higher_seed_wins_in_6": 0.13744,
+        "probability_higher_seed_wins_in_7": 0.05628,
+        "n_simulations": 50000
+      }
+    },
+    {
+      "round": "Stanley Cup Final",
+      "conference": "NHL",
+      "higher_seed": "CAR",
+      "lower_seed": "COL",
+      "predicted_winner": "COL",
+      "confidence_in_predicted_winner_pct": 93.99,
+      "blended_model_prob_higher_seed_wins_series": 0.228675,
+      "monte_carlo": {
+        "series_win_probability_for_higher_seed": 0.06008,
+        "expected_games": 5.064,
+        "probability_higher_seed_wins_in_4": 0.00278,
+        "probability_higher_seed_wins_in_5": 0.0093,
+        "probability_higher_seed_wins_in_6": 0.01418,
+        "probability_higher_seed_wins_in_7": 0.03382,
+        "n_simulations": 50000
+      }
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "diff_nhl_satPctAhead",
+      "importance": 1.0
+    },
+    {
+      "feature": "diff_mp_5v5_goalsFor",
+      "importance": 0.85096
+    },
+    {
+      "feature": "diff_mp_5v5_blockedShotAttemptsAgainst",
+      "importance": 0.807835
+    },
+    {
+      "feature": "diff_nhl_winsInRegulation",
+      "importance": 0.804159
+    },
+    {
+      "feature": "diff_nhl_ppFaceoffs",
+      "importance": 0.774419
+    },
+    {
+      "feature": "diff_nhl_period2GoalsAgainst",
+      "importance": 0.76383
+    },
+    {
+      "feature": "diff_nhl_goalsAgainstPenaltyShots",
+      "importance": 0.751826
+    },
+    {
+      "feature": "h2h_games",
+      "importance": 0.744156
+    },
+    {
+      "feature": "diff_mp_5v5_reboundGoalsAgainst",
+      "importance": 0.735322
+    },
+    {
+      "feature": "diff_mp_5v5_mediumDangerxGoalsFor",
+      "importance": 0.724402
+    },
+    {
+      "feature": "diff_nhl_goalsAgainst5On5",
+      "importance": 0.713797
+    },
+    {
+      "feature": "diff_nhl_points",
+      "importance": 0.700274
+    },
+    {
+      "feature": "diff_nhl_lossesScoringFirst",
+      "importance": 0.684122
+    },
+    {
+      "feature": "diff_nhl_shFaceoffs",
+      "importance": 0.677422
+    },
+    {
+      "feature": "diff_nhl_period1GoalsFor",
+      "importance": 0.675068
+    },
+    {
+      "feature": "diff_nhl_takeawaysPer60",
+      "importance": 0.661985
+    },
+    {
+      "feature": "diff_nhl_ppFaceoffPct",
+      "importance": 0.660453
+    },
+    {
+      "feature": "diff_nhl_winPctTrailPeriod2",
+      "importance": 0.658182
+    },
+    {
+      "feature": "diff_nhl_penaltyKillNetPct",
+      "importance": 0.653868
+    },
+    {
+      "feature": "diff_nhl_lossTrailPeriod1",
+      "importance": 0.649705
+    },
+    {
+      "feature": "diff_mp_5v5_blockedShotAttemptsFor",
+      "importance": 0.611209
+    },
+    {
+      "feature": "diff_nhl_winPctScoringFirst",
+      "importance": 0.585373
+    },
+    {
+      "feature": "diff_goalie_team_savePct",
+      "importance": 0.580886
+    },
+    {
+      "feature": "diff_nhl_goalsAgainstPerGame",
+      "importance": 0.5785
+    },
+    {
+      "feature": "diff_nhl_winPctLeadPeriod1",
+      "importance": 0.578341
+    }
+  ],
+  "blend_weights": {
+    "v2_logistic": 0.08728039611061861,
+    "v2_xgboost": 0.19346599254419086,
+    "v2_lightgbm": 0.016154759503944006,
+    "v2_bayesian": 0.7030988518412465
+  },
+  "feature_importance_method": "Per submodel: normalized abs(logistic coef) or tree feature_importances_; blended with the same weights as win-probability; global importance scaled to max=1."
+}

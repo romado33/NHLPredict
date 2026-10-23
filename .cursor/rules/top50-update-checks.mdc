@@ -1,0 +1,34 @@
+---
+description: On every top-32 board update, also report slow starts inside the 32 and hot starts outside it
+alwaysApply: true
+---
+
+# Top-32 update checks
+
+When the user asks to update the 2026-27 scorers board (`data/processed/nhl_2026_27_top50_scorers.csv`), the reply includes both checks below in the same answer. Do not wait for a follow-up.
+
+Triggers include "update the board," "update the list," "update based on current season," and "update against current season progress."
+
+## How to judge a start
+
+Compare points so far with the rate already on the row (projection divided by the GP that projection assumes). For anyone not on the board, use last season's points per game from the NHL stats API.
+
+A start is particular when the player is about 4 or more points off that rate over the games played, or running at about half (or double) the rate. One game, including a hat trick or a 4-assist power-play night, does not qualify. Say the temporary reason when one exists (injured teammate, one power-play barrage).
+
+These checks do not by themselves move a projection or the top-32 cut. Move a number only when expected games or role changed.
+
+## October 27 entry deadline
+
+The entry deadline is October 27, 2026. Update the board on the morning of October 26 (review pass, before that night's games) and again on the morning of October 27 (the finalized list to submit). If either morning arrives and the board has not been stamped that day, do the update immediately, with both checks above. October 27's reply presents the top 32 as the list to submit.
+
+## 1. Slow starts inside the top 32
+
+Only players with `chosen_top32` = Y. Name anyone particularly behind their rate. If the only cold lines are a point or two light, say so.
+
+Bar, morning of Oct 14: Matt Boldy 3 in 7 against ~8; Sidney Crosby 4 in 7; Cole Caufield a step behind at 4 in 6.
+
+## 2. Hot starts outside the top 32
+
+Players with `chosen_top32` = N, plus current league leaders who are not on the board. Pull the live 2026-27 scoring list. Name anyone particularly ahead of their rate.
+
+Bar, morning of Oct 14: Sebastian Aho 13 in 8 against ~8; Vasily Podkolzin 9 in 6 (7 goals) against a 37-point season, on McDavid's line while Hyman and Nugent-Hopkins are out; Cole Perfetti, Alexis Lafrenière, and Leo Carlsson a step behind. Jack Hughes at his existing 1.26 rate is not a hot start.

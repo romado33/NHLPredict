@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "upset_blend": 0.32,
+  "comment": "Blend toward a plausible deeper run for TBL if they upset BUF/CAR paths (wild-card variance). BUF/CAR slightly trimmed. Tune upset_blend 0–1 or set enabled false to use raw bracket sim only.",
+  "teams": {
+    "TBL": {
+      "expected_games_mult": 1.16,
+      "p_r2_add": 0.0,
+      "p_cf_add": 0.11,
+      "p_final_add": 0.045
+    },
+    "BUF": {
+      "expected_games_mult": 0.97,
+      "p_r2_add": 0.0,
+      "p_cf_add": -0.045,
+      "p_final_add": -0.035
+    },
+    "CAR": {
+      "expected_games_mult": 0.99,
+      "p_r2_add": 0.0,
+      "p_cf_add": -0.028,
+      "p_final_add": -0.022
+    }
+  }
+}

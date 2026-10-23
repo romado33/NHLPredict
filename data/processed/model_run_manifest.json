@@ -1,0 +1,49 @@
+{
+  "project_root": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict",
+  "generated_at_utc": "2026-04-16T16:39:10.173550+00:00",
+  "v2": {
+    "kind": "v2_team_series_models",
+    "generated_at_utc": "2026-04-16T16:39:10.173567+00:00",
+    "models_dir": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models",
+    "files": {
+      "v2_models.joblib": {
+        "path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models\\v2_models.joblib",
+        "sha256": "227c7a9063d25339cd11b6e43e570b5eaf45d0597034b40fabf00346d59aac45",
+        "exists": true
+      },
+      "v2_features.joblib": {
+        "path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models\\v2_features.joblib",
+        "sha256": "7f608f2b78b5dfdaea71558255161862484d11d3f4d35a6d24f18e9827b8d53b",
+        "exists": true
+      },
+      "v2_blend_weights.joblib": {
+        "path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models\\v2_blend_weights.joblib",
+        "sha256": "232f9c9b5460f82751387f539710407dfd920a2b673eaa4cb1085de8d7e4207d",
+        "exists": true
+      }
+    }
+  },
+  "scoring": {
+    "kind": "playoff_scoring_models",
+    "generated_at_utc": "2026-04-16T16:39:10.175899+00:00",
+    "files": {
+      "scoring_models.joblib": {
+        "path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\data\\models\\scoring_models.joblib",
+        "sha256": "d4b6cc79f34ff1bc097e65ee53ec22fde16a24ec258383eccf1e4a1fc5cd87fb",
+        "exists": true
+      }
+    }
+  },
+  "health_policy_version": "2026-04_playoff_presumption_v1",
+  "pipeline": "scoring_predict",
+  "scoring_bracket_adjustments": {
+    "config_path": "C:\\Users\\RobDods\\Apps\\Cursor_Predictors\\Cursor_NHLPO_Predict\\config\\scoring_bracket_adjustments.json",
+    "upset_blend": 0.32,
+    "teams_tuned": [
+      "TBL",
+      "BUF",
+      "CAR"
+    ],
+    "comment": "Blend toward a plausible deeper run for TBL if they upset BUF/CAR paths (wild-card variance). BUF/CAR slightly trimmed. Tune upset_blend 0\u20131 or set enabled false to use raw bracket sim only."
+  }
+}

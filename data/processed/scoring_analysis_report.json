@@ -1,0 +1,155 @@
+{
+  "training": {
+    "team_exp_vs_gp": {
+      "correlation_pearson": 0.7926794545039415,
+      "correlation_spearman": 0.7208209015592538,
+      "mean_absolute_difference": 2.847344197039433,
+      "n": 8039
+    },
+    "residuals_by_position": {
+      "C": {
+        "n": 2302,
+        "mean_residual": -1.3491196939577745,
+        "median_residual": -1.2670577338684779,
+        "std_residual": 3.2098441459849014,
+        "mae": 2.535358109281941
+      },
+      "L": {
+        "n": 1538,
+        "mean_residual": -1.424139836622376,
+        "median_residual": -1.134782608695652,
+        "std_residual": 2.993351717490129,
+        "mae": 2.384086033926536
+      },
+      "R": {
+        "n": 1477,
+        "mean_residual": -1.3933824251013165,
+        "median_residual": -1.2705882352941178,
+        "std_residual": 3.1173065894807914,
+        "mae": 2.527120018789261
+      },
+      "D": {
+        "n": 2722,
+        "mean_residual": -0.8320863389194261,
+        "median_residual": -0.7999999999999999,
+        "std_residual": 2.2748066904767232,
+        "mae": 1.7775229336606675
+      }
+    },
+    "stars_vs_depth": {
+      "stars": {
+        "n": 1008,
+        "mean_residual": -2.3815146582220494,
+        "mae": 3.7494771816562147
+      },
+      "depth": {
+        "n": 4098,
+        "mean_residual": -0.7641261070552019,
+        "mae": 1.605201619673567
+      }
+    },
+    "bias_by_expected_games": {
+      "4 or fewer": {
+        "n": 887,
+        "mean_residual": -0.29602247378306645,
+        "median_residual": -0.48051948051948035,
+        "bias": "over"
+      },
+      "5-8": {
+        "n": 2738,
+        "mean_residual": -0.766537334022609,
+        "median_residual": -0.8000000000000003,
+        "bias": "over"
+      },
+      "9-12": {
+        "n": 1542,
+        "mean_residual": -1.2028522723916772,
+        "median_residual": -1.2369360597208705,
+        "bias": "over"
+      },
+      "13-16": {
+        "n": 1056,
+        "mean_residual": -1.5130768842996838,
+        "median_residual": -1.540665584415584,
+        "bias": "over"
+      },
+      "17+": {
+        "n": 1458,
+        "mean_residual": -1.85552679301714,
+        "median_residual": -2.0106338028169013,
+        "bias": "over"
+      }
+    }
+  },
+  "predictions_2026": {
+    "flagged_in_top35": [],
+    "suspicious_low_stats_high_pred": [],
+    "potentially_missing_stars": [
+      {
+        "player": "David Pastrnak",
+        "pred_points": 6.7,
+        "reg_ppg": 1.2987012987012987,
+        "team": "BOS"
+      },
+      {
+        "player": "Kirill Kaprizov",
+        "pred_points": 6.6,
+        "reg_ppg": 1.141025641025641,
+        "team": "MIN"
+      },
+      {
+        "player": "Nick Suzuki",
+        "pred_points": 6.5,
+        "reg_ppg": 1.2317073170731707,
+        "team": "MTL"
+      },
+      {
+        "player": "Matt Boldy",
+        "pred_points": 6.1,
+        "reg_ppg": 1.118421052631579,
+        "team": "MIN"
+      },
+      {
+        "player": "Tim St\u00fctzle",
+        "pred_points": 5.8,
+        "reg_ppg": 1.0375,
+        "team": "OTT"
+      },
+      {
+        "player": "Cole Caufield",
+        "pred_points": 5.7,
+        "reg_ppg": 1.0864197530864197,
+        "team": "MTL"
+      },
+      {
+        "player": "Clayton Keller",
+        "pred_points": 5.6,
+        "reg_ppg": 1.0617283950617284,
+        "team": "UTA"
+      }
+    ]
+  },
+  "realism": {
+    "total_predicted_points": 411.9,
+    "team_distribution": {
+      "COL": 7,
+      "VGK": 5,
+      "EDM": 4,
+      "TBL": 4,
+      "BUF": 4,
+      "CAR": 4,
+      "PIT": 4,
+      "DAL": 3
+    },
+    "position_distribution": {
+      "C": 14,
+      "R": 9,
+      "D": 6,
+      "L": 6
+    },
+    "pred_points_range": [
+      7.3,
+      33.4
+    ]
+  }
+}

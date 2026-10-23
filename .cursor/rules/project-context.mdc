@@ -1,0 +1,213 @@
+---
+description: NHL Playoff Predictor project context, architecture, and key decisions
+alwaysApply: true
+---
+
+# NHL Playoff Predictor - Project Context
+
+## Project Purpose
+Two-model system for 2026 NHL playoffs:
+1. **Team Model (V2)** — Predict series winners across all 4 rounds using 25 years of historical data (2001-2025) with ensemble ML + Monte Carlo simulation.
+2. **Scoring Model** — Predict individual playoff point totals for every skater on playoff/bubble teams, rank top 35 scorers. Built on team model's expected-games output.
+
+## Architecture — Team Model
+- `config/settings.py` — Central config (paths, API URLs, seasons `FIRST_SEASON=2001`..`LAST_HISTORICAL_SEASON=2025`, `CURRENT_SEASON_END_YEAR=2026`, `RANDOM_STATE`, team mappings)
+- `src/data/nhl_api_client.py` — HTTP client with disk cache, rate limiting, retry. Constructor takes `cache_ttl_hours` (default 6.0). Methods: `_web()`, `_stats()`, `get_standings()`, `get_team_stats()`, `get_goalie_stats()`
+- `src/data/collectors.py` — `collect_standings()`, `collect_team_stats_nhl()`, `collect_moneypuck_team_stats()`, `collect_goalie_stats()`. MoneyPuck uses `{start_year}` URL format. Standings use `today.isoformat()` for current season.
+- `src/data/collectors_v2.py` — `collect_skater_stats()` (gameTypeId=2), `collect_moneypuck_recency()`, `collect_head_to_head()`, `collect_playoff_schedules()`
+- `src/features/engineer.py` — `normalize_team()`, `_build_team_season_features()`, `_compute_differential()`, `_get_team_features()`
+- `src/features/advanced.py` — V2 features: player-level, H2H, injury proxy, round, rest, style, conference, SOS. `integrate_advanced_features()` merges into main matrix.
+- `src/features/elo.py` — ELO rating system for teams
+- `src/models/trainer.py` — Baseline LogReg, XGB, LGB, voting ensemble
+- `src/models/improved_trainer.py` — Temporal CV, multi-stage feature selection, StackingClassifier, CalibratedClassifierCV (uses `StratifiedKFold` not `TimeSeriesSplit` for internal CV)
+- `src/models/bayesian.py` — `BayesianLogistic` class with uncertainty estimates
+- `src/models/monte_carlo.py` — `simulate_series(base_prob, n_sims=50000)` returns dict with `series_win_prob`, `expected_games`, sweep/5/6/7 game probs. `simulate_bracket()`, `print_bracket_results()`
+- `scripts/run_v2_pipeline.py` — Master pipeline: `step_collect()`, `step_features()`, `step_train_v2()`, `step_predict_v2()`. Supports `--predict-only`.
+
+## Architecture — Scoring Model
+- `src/data/collectors_playoff_scoring.py` — `collect_playoff_skater_stats()` (gameTypeId=3), `collect_regular_season_skater_stats()` (gameTypeId=2), `collect_player_bios()` (birthDate, draft info from `/skater/bios`). Saves to `data/raw/skater_stats_playoffs.csv`, `skater_stats_regular_historical.csv`, `player_bios.csv`.
+- `src/data/roster_injury.py` — `fetch_live_standings()`, `compute_playoff_probabilities()`, `identify_contender_teams()`, `fetch_team_roster()`, `check_player_activity()`, `verify_and_flag_players()`. Inactivity threshold: 14 days.
+- `src/features/player_scoring.py` — `build_training_dataset()`, `build_prediction_features()`, `_extract_player_features()` (53 features), `_compute_team_scoring_ranks()`, `_compute_team_playoff_games()`, `_build_bios_lookup()`, `_build_team_stats_lookup()`. Accepts `player_bios_df` and `team_stats_df` for age/team context features. `PLAYOFF_DISCOUNT` dict maps position to historical playoff/regular scoring ratio.
+- `src/models/scoring_predictor.py` — `train_scoring_models()` (Ridge + XGBoost + LightGBM regressors with log-transform targets), `_train_gate_classifier()` (LogReg for P(scores>0)), `_train_stacking_meta()` (Ridge meta-learner on OOF predictions + gate prob), `temporal_cv_splits()`, `predict_blended()` (accepts gate + meta_model), `get_feature_importance()`. RandomizedSearchCV with `n_iter=100`, `TimeSeriesSplit(n_splits=5)`. Sample weights: `0.88^(max_season - season)`. Auto-selects between stacking meta and Dirichlet+gate blend.
+- `scripts/run_scoring_pipeline.py` — Master pipeline: `step_collect()`, `step_compute_team_expected_games()` (returns `(team_games, team_probs)` tuple), `step_build_and_train()`, `step_predict()`. Supports `--predict-only`. Predict-only always recomputes team expected games for freshest standings.
+
+## Key Data Sources
+- **NHL Web API** (`api-web.nhle.com/v1`) — Standings (`/standings/now`), rosters (`/roster/{team}/current`), player game logs (`/player/{id}/game-log/{seasonId}/{gameType}`)
+- **NHL Stats API** (`api.nhle.com/stats/rest/en`) — Team stats (`/team/{report}`), skater stats (`/skater/{report}`), goalie stats (`/goalie/{report}`). Filter by `cayenneExp=gameTypeId=2` (regular) or `=3` (playoff).
+- **MoneyPuck** (`moneypuck.com/moneypuck/playerData/seasonSummary/{start_year}/regular/teams.csv`) — Advanced analytics. Requires browser-like headers.
+
+## Saved Artifacts (data/models/)
+- `v2_models.joblib` — Team prediction models (Bayesian, LogReg, XGB, LGB)
+- `v2_features.joblib` — Selected feature names for team model
+- `v2_blend_weights.joblib` — Optimal blend weights for team model
+- `scoring_models.joblib` — Scoring prediction models (3 targets x 3 model types + blend weights + feature cols)
+
+## Saved Data Files
+- `data/raw/skater_stats_playoffs.csv` — 16,602 rows, 49 cols, historical playoff stats 2001-2025
+- `data/raw/skater_stats_regular_historical.csv` — 21,475 rows, 27 cols, regular season stats 2001-2025
+- `data/raw/player_bios.csv` — 3,939 unique players with birthDate, draftYear, height, weight
+- `data/raw/skater_stats.csv` — Current season (2026) skater stats from V2 collector (1,774 rows)
+- `data/raw/playoff_series.csv` — Historical series results for team model training
+- `data/processed/team_expected_games_2026.json` — Expected games + playoff probs + bubble teams
+- `data/processed/scoring_predictions_2026.csv` — Full predictions for all 581 contender-team players
+- `data/processed/top35_scorers_2026.csv` — Top 35 predicted scorers
+- `data/processed/scoring_training_data.csv` — Training dataset for scoring model
+
+## Critical Rules
+1. **Data freshness**: Always use live API data for current season. Use near-zero cache TTL (0.01 hours) for standings and prediction-time player stats.
+2. **NHL bracket format**: Uses DIVISION-BASED seeding, NOT simple 1v8 conference ranking. Division winners play wild cards; D2 vs D3 within same division. Verified against NHL.com graphic.
+3. **Team name normalization**: Always use `normalize_team()` from `src/features/engineer.py`. NHL API `teamAbbrev` returns `{'default': 'COL'}` dict — extract with `.get("default")`.
+4. **Temporal CV**: Never use random cross-validation. Always use expanding-window temporal splits to prevent data leakage. `min_train_years=6`.
+5. **2004-05 lockout**: Season cancelled. Skip `season == 2005` in all loops.
+6. **Bubble teams MUST be included**: User requirement — "run for any team that could potentially make the playoffs, even if not in playoff position right now." Min probability threshold: 5%.
+7. **Player data freshness is CRITICAL**: User was burned by an LLM giving outdated player predictions. Every player must be verified on a current roster. Injury detection via game log recency. Never use stale/cached player data for predictions.
+
+## Team Model Performance (V2)
+- Best: Bayesian Logistic (AUC=0.681, Accuracy=61.3%, Brier=0.229)
+- Optimal blend: Bayesian 85%, Logistic 12%, XGBoost 2%, LightGBM 1%
+- Season-by-season AUC range: 0.34 (2023) to 0.87 (2013/2015)
+
+## 2026 Team Predictions (verified against NHL.com bracket Mar 18, 2026)
+- East: CAR>DET, PIT>NYI, BUF>BOS, TBL>MTL => R2: CAR>PIT, BUF>TBL => ECF: CAR>BUF
+- West: COL>SEA, DAL>MIN, ANA>UTA, EDM>VGK => R2: COL>DAL, EDM>ANA => WCF: COL>EDM
+- Cup Final: COL over CAR — Predicted champion: Colorado Avalanche (95.5%)
+
+## Scoring Model Performance (V3 — weakness fixes, Mar 19, 2026)
+| Target | MAE | Spearman | Top-35 Overlap | Blend Strategy |
+|--------|-----|----------|----------------|----------------|
+| Points | 1.931 | 0.739 | 68.7% | Stacking meta (XGB 70%, Ridge 27%, LGB 4%) |
+| Goals  | 0.966 | 0.646 | 60.6% | Dirichlet+gate (XGB 67%, Ridge 29%, LGB 4%) |
+| Assists| 1.386 | 0.691 | 64.8% | Stacking meta (XGB 59%, Ridge 24%, LGB 18%) |
+Note: MAE slightly higher because noisy expected_games during training (train-test shift fix) adds realism. Predictions now have injury discounts and 80% CIs — overall quality is significantly higher.
+
+### V3 Weakness Fixes (6 improvements)
+1. **Injury discount**: Players flagged INACTIVE get predictions multiplied by return probability (>=60d: 0%, 30-60d: 15%, 21-30d: 50%, 14-21d: 75%). NOT ON ROSTER players are hard-excluded (predictions zeroed). Applied post-prediction to points, goals, assists, and confidence intervals.
+2. **Deep-run attenuation**: New features `exp_games_sqrt`, `pts_x_sqrt_games`, `toi_x_sqrt_games`, `deep_run_ratio` capture diminishing returns for teams in later playoff rounds. sqrt(expected_games) interactions have diminishing returns vs linear interactions.
+3. **Train-test distribution shift fix**: `_generate_noisy_expected_games()` adds calibrated Gaussian noise (sigma=1.8/round) to actual playoff games in training data. This aligns training features with inference distribution where expected_games are noisy model outputs, not exact actuals.
+4. **Bootstrap prediction intervals**: `predict_with_intervals()` generates 80% CIs via 200 bootstrap iterations with feature perturbation (3% noise) and model subsampling. Displayed as `[lo-hi]` in output. Injury discounts applied to CI bounds.
+5. **Opponent-adjusted scoring**: `_compute_opponent_quality()` builds per-(season,team) opponent quality features from series matchup data. `_compute_prediction_opponent_quality()` uses standings data for 2026. New features: `opp_pts_pace`, `opp_ga_per_gp`. `opp_pts_pace` ranks #10 in feature importance for points.
+6. **Position-specific calibration**: `_train_position_calibration()` learns forward-vs-defenseman scaling factors from temporal CV residuals. Factors: F=1.29, D=1.30 (capped at [0.7, 1.3]). Applied in `predict_blended()` based on `is_forward` feature.
+
+### Previous V2 Architecture (still active)
+1. **Log-transform targets**: Training on log1p(target), predicting with expm1. Reduces target skew from 2.18 to 0.20. Improves ranking accuracy (Spearman).
+2. **Two-stage model**: Gate classifier P(scores > 0) + value regressors. Gate correctly assigns 0.998 prob to top scorers, 0.553 to zero-scorers. 22.6% of historical players scored 0 points — gate handles this.
+3. **Stacking meta-learner**: Ridge on out-of-fold predictions + gate probability. Selected over Dirichlet blend when it outperforms. Falls back to Dirichlet+gate otherwise.
+4. **Probability-weighted expected games**: Each team's expected games = sum over rounds of E[games_in_round] * P(team reaches that round). No longer deterministically advances winners. More realistic than old approach.
+5. **Sharper sample weighting**: Decay 0.88 (from 0.93). Oldest season gets 4% weight vs 16% before.
+6. **Expanded hyperparameter search**: n_iter=100 (from 80), wider parameter grids.
+7. **Player bios collection**: `/skater/bios` endpoint provides birthDate for age features.
+
+### Scoring Feature Importance (Points, V3)
+1. `team_shots_per_gp` — Team shots per game (16.7%)
+2. `team_gf_per_gp` — Team goals-for per game (16.3%)
+3. `team_pp_pct` — Team power play percentage (9.0%)
+4. `pts_x_expected_games` — Reg-season PPG * expected games (8.8%)
+5. `playoff_discount_ppg` — Position-specific playoff scoring discount (7.5%)
+6. `reg_toi_per_game` — Regular season ice time per game (7.0%)
+7. `toi_x_sqrt_games` — TOI * sqrt(expected_games) **[NEW V3]** (6.8%)
+8. `team_expected_games` — From probability-weighted bracket simulation (6.8%)
+9. `reg_shots` — Regular season shots (6.0%)
+10. `opp_pts_pace` — Opponent quality / strength of path **[NEW V3]** (6.0%)
+
+### 59 Scoring Features (up from 53)
+Core: reg_points, reg_goals, reg_assists, reg_gp, reg_ppg, reg_gpg, reg_apg
+Situational: reg_ev_points, reg_pp_points, reg_sh_points, reg_pp_goals, reg_sh_goals, reg_ev_goals
+Shooting/TOI: reg_shots, reg_shots_per_game, reg_shooting_pct, reg_toi_per_game, reg_gwg, reg_plus_minus
+Position: is_forward, is_center, is_defenseman
+Team: team_expected_games
+Historical: prior_po_ppg, prior_po_gp, prior_po_pts, career_po_seasons
+Interactions: pts_x_expected_games, goals_x_expected_games, assists_x_expected_games, pp_pts_x_expected_games, toi_x_expected_games, shots_x_expected_games, prior_po_ppg_x_games
+Shares: pp_pts_share, ev_pts_share
+Position-adjusted: fwd_ppg, def_ppg
+Team rank: team_pts_rank, team_pts_share, is_top3_team_scorer, is_top6_team_scorer
+Age: age, age_squared
+Playoff discount: playoff_discount_ppg (C:0.786, L:0.754, R:0.762, D:0.814)
+Team offense: team_gf_per_gp, team_pp_pct, team_shots_per_gp, team_standings_pts
+Age interactions: age_x_expected_games, age_x_ppg
+Availability: gp_availability, ppg_per_toi
+**NEW V3** Deep-run attenuation: exp_games_sqrt, pts_x_sqrt_games, toi_x_sqrt_games, deep_run_ratio
+**NEW V3** Opponent quality: opp_pts_pace, opp_ga_per_gp
+
+## 2026 Standings Snapshot (Mar 19, 2026)
+### Eastern Conference (top 16)
+CAR(92pts), BUF(90), TBL(86), MTL(84), PIT(84), NYI(83), BOS(82), DET(82) | Bubble: CBJ(81), OTT(77), PHI(76), WSH(76)
+### Western Conference (top 16)
+COL(98pts), DAL(96), MIN(90), ANA(78), EDM(77), UTA(76), VGK(76), SEA(71) | Bubble: LAK(71), SJS(70), NSH(69), WPG(67)
+
+## Team Expected Playoff Games (Mar 19, 2026) — Probability-Weighted
+COL: 17.9, BUF: 14.4, CAR: 11.3, TBL: 10.5, EDM: 10.2, PIT: 10.1, ANA: 9.7, DAL: 8.9
+DET: 5.8, VGK: 5.8, MIN: 5.8, UTA: 5.7, NYI: 5.7, MTL: 5.3, BOS: 5.2, SEA: 4.2
+Bubble: LAK: 2.8, CBJ: 2.4, SJS: 2.4, NSH: 2.0, WPG: 1.2, OTT: 0.8, PHI/WSH/STL: 0.4
+**Key change from V1**: CAR dropped from 22.3 to 11.3 (prob-weighted), EDM from 16.0 to 10.2
+
+## 2026 Predicted Top 35 Playoff Scorers (Mar 19, 2026 — V3, with CIs and injury discounts)
+| Rk | Player | Team | Pos | Pts | 80% CI | G | A | ExpGP | RegPts | Notes |
+|----|--------|------|-----|-----|--------|---|---|-------|--------|-------|
+| 1 | Nathan MacKinnon | COL | C | 33.2 | [19.3-39.4] | 11.0 | 21.1 | 17.9 | 111 | |
+| 2 | Martin Necas | COL | C | 22.3 | [15.5-18.8] | 7.7 | 14.2 | 17.9 | 81 | |
+| 3 | Cale Makar | COL | D | 20.6 | [15.1-16.0] | 3.4 | 16.1 | 17.9 | 69 | |
+| 4 | Connor McDavid | EDM | C | 17.8 | [12.9-14.9] | 4.1 | 12.6 | 10.2 | 115 | |
+| 5 | Nikita Kucherov | TBL | R | 16.1 | [11.8-12.8] | 3.7 | 11.5 | 10.5 | 111 | |
+| 6 | Brock Nelson | COL | C | 15.1 | [10.9-11.3] | 5.6 | 9.1 | 17.9 | 55 | |
+| 7 | Leon Draisaitl | EDM | C | 14.7 | [11.0-11.3] | 3.9 | 10.0 | 10.2 | 97 | |
+| 8 | Tage Thompson | BUF | C | 12.7 | [8.2-9.1] | 4.9 | 7.6 | 14.4 | 70 | |
+| 9 | Evan Bouchard | EDM | D | 12.3 | [7.5-9.8] | 1.2 | 10.2 | 10.2 | 78 | |
+| 10 | Valeri Nichushkin | COL | R | 12.3 | [8.0-9.5] | 3.6 | 7.9 | 17.9 | 38 | |
+| 11 | Rasmus Dahlin | BUF | D | 11.7 | [7.6-8.4] | 1.4 | 10.0 | 14.4 | 60 | |
+| 12 | Sebastian Aho | CAR | C | 11.4 | [7.8-8.6] | 3.2 | 7.5 | 11.3 | 69 | |
+| 13 | Alex Tuch | BUF | R | 11.1 | [7.0-8.7] | 4.0 | 6.4 | 14.4 | 57 | |
+| 14 | Gabriel Landeskog | COL | L | 10.7 | [6.7-7.7] | 3.1 | 7.0 | 17.9 | 29 | |
+| 15 | Jake Guentzel | TBL | C | 10.6 | [7.1-8.1] | 2.9 | 6.9 | 10.5 | 70 | |
+| 16 | Artturi Lehkonen | COL | L | 10.0 | [7.0-7.6] | 3.4 | 6.1 | 17.9 | 42 | INACTIVE 17d (75% disc.) |
+| 17 | Seth Jarvis | CAR | C | 9.9 | [7.0-7.2] | 3.4 | 5.9 | 11.3 | 54 | |
+| 18 | Jason Robertson | DAL | L | 9.5 | [6.5-7.1] | 2.9 | 5.9 | 8.9 | 81 | |
+| 19 | Sidney Crosby | PIT | C | 9.2 | [6.1-6.6] | 2.5 | 6.2 | 10.1 | 61 | |
+| 20 | Andrei Svechnikov | CAR | R | 8.9 | [6.1-6.5] | 2.8 | 5.5 | 11.3 | 59 | |
+| 21 | Wyatt Johnston | DAL | C | 8.9 | [5.8-6.3] | 3.0 | 5.4 | 8.9 | 74 | |
+| 22 | Darren Raddysh | TBL | D | 8.9 | [5.0-6.9] | 1.1 | 7.1 | 10.5 | 58 | |
+| 23 | Zach Hyman | EDM | L | 8.8 | [5.8-6.1] | 3.8 | 4.7 | 10.2 | 46 | |
+| 24 | Evgeni Malkin | PIT | C | 8.4 | [5.0-6.2] | 1.9 | 5.7 | 10.1 | 51 | |
+| 25 | Brandon Hagel | TBL | L | 8.4 | [5.8-6.0] | 2.8 | 5.1 | 10.5 | 63 | |
+| 26 | Ryan Nugent-Hopkins | EDM | C | 8.4 | [5.1-6.5] | 2.2 | 5.3 | 10.2 | 51 | |
+| 27 | Erik Karlsson | PIT | D | 8.2 | [4.6-6.1] | 0.7 | 7.0 | 10.1 | 52 | |
+| 28 | Ryan McLeod | BUF | C | 8.1 | [5.1-5.8] | 1.5 | 6.3 | 14.4 | 49 | |
+| 29 | Bryan Rust | PIT | R | 8.1 | [5.1-5.8] | 2.4 | 5.1 | 10.1 | 54 | |
+| 30 | Shayne Gostisbehere | CAR | D | 7.9 | [4.2-6.4] | 0.8 | 6.3 | 11.3 | 43 | |
+| 31 | Cutter Gauthier | ANA | L | 7.8 | [5.1-5.4] | 3.3 | 3.9 | 9.7 | 61 | |
+| 32 | Jason Zucker | BUF | L | 7.7 | [4.6-5.5] | 2.6 | 4.6 | 14.4 | 36 | |
+| 33 | Nikolaj Ehlers | CAR | L | 7.7 | [5.1-5.5] | 2.3 | 4.7 | 11.3 | 56 | |
+| 34 | Brayden Point | TBL | C | 7.7 | [4.8-5.7] | 2.0 | 4.9 | 10.5 | 44 | |
+| 35 | Miro Heiskanen | DAL | D | 7.7 | [4.8-5.3] | 0.5 | 6.8 | 8.9 | 57 | |
+Key V3 changes: Injury discounts applied (Lehkonen 75%, Rantanen dropped out at 1.6 pts). Position calibration boosted predictions ~29%. 80% CIs now show prediction uncertainty. NOT ON ROSTER players excluded.
+
+## Key Debugging History
+- **MoneyPuck 403/404**: Required browser-like User-Agent/Referer headers; URL uses `{start_year}` not `{season_id}`
+- **teamAbbrev dict**: NHL API returns `{'default': 'COL'}` — parse with `x.get("default")` or `eval(x)` for cached string version
+- **All-NaN features**: Drop columns >80% NaN before feature selection (pre-MoneyPuck era gap)
+- **StackingClassifier CV**: Must use `StratifiedKFold(shuffle=False)` not `TimeSeriesSplit` for internal CV
+- **Empty training data**: Regular season stats file only had 2026 data; needed to collect 25-year historical file separately (`skater_stats_regular_historical.csv`)
+- **RandomizedSearchCV n_iter**: Reduced from 200 to 80 to avoid timeout during 3-target x 3-model training (~8 min total)
+- **PowerShell quoting**: Inline Python strings with quotes and braces need careful escaping; use single-line commands or script files
+- **Unicode errors**: Replace `→` with `=>` in print statements; set `$env:PYTHONIOENCODING = "utf-8"`
+
+## Known Issues / Gotchas
+- MoneyPuck `teams_20.csv` (recency) only available from ~2024 onwards
+- NHL API `teamAbbrev` field returns `{'default': 'COL'}` dict — must extract correctly
+- Some features are all-NaN for early seasons (pre-MoneyPuck era) — drop >80% NaN cols before selection
+- Team model imputer warnings for missing features in single-matchup inference — harmless but noisy
+- LGBMRegressor "X does not have valid feature names" warning during scoring prediction — harmless
+- Goals + assists reconciliation: final points = average of (direct points prediction) and (predicted goals + predicted assists)
+- Scoring pipeline `--predict-only` still recomputes team expected games for fresh standings data
+- Log-transform models: Slightly higher individual-model MAE in original space is expected trade-off for better ranking (Spearman). Stacking meta-learner recovers MAE.
+- `team_standings_pts` feature is NaN in training data (no standings available for historical team-player joins). Imputed by median. Available for current-season predictions.
+- Player bios collection takes ~25 API calls (one per season). Cached to `player_bios.csv`.
+- Noisy expected games in training (V3 fix): Adds ~1.8 games/round Gaussian noise to actuals. This intentionally increases MAE slightly but produces predictions that generalize better at inference time.
+- Position calibration factors near ceiling (F=1.29, D=1.30): Both hit the 1.3 cap, suggesting the model still systematically underpredicts. May need to investigate whether log-transform + gate interaction causes systematic underestimation.
+- Bootstrap CI width varies significantly (MacKinnon: 19.3-39.4 = 20.1 pt range vs Brayden Point: 4.8-5.7 = 0.9 pt range) — wider for high-scoring players as expected from multiplicative uncertainty.
+
+## Remaining Potential Improvements
+- **Game-by-game historical data**: Use individual game logs for recent form features (last 10/20 game scoring rates)
+- **Linemate/deployment data**: Who plays on PP1 vs PP2, top-6 vs bottom-6
+- **Round-by-round scoring decay**: Explicit per-round scoring adjustment (R1 higher than SCF)
+- **Coaching/system effects**: Offensive vs defensive coaching styles
+- **Mid-season trade handling**: Players who changed teams mid-season

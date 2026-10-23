@@ -1,0 +1,208 @@
+{
+  "generated_at_utc": "2026-04-15T17:30:47.540603+00:00",
+  "audit": {
+    "stress_years": [
+      2023,
+      2024,
+      2025
+    ],
+    "2023": {
+      "n_rows": 15,
+      "mean_row_nan_frac": 0.0,
+      "worst_columns_by_nan_frac": [
+        {
+          "feature": "diff_nhl_shotsForPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winPctLeadPeriod1",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winPctTrailPeriod2",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_ppFaceoffPct",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_satPctAhead",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_mp_all_lowDangerGoalsAgainst",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_goalsAgainstPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_period1GoalsFor",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_pkNetGoalsPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winsInRegulation",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_netPenalties",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_goalie_team_savePct",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_losses",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_period2GoalsAgainst",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_goalie_starter_goalsAgainstAverage",
+          "nan_frac": 0.0
+        }
+      ]
+    },
+    "2024": {
+      "n_rows": 15,
+      "mean_row_nan_frac": 0.0,
+      "worst_columns_by_nan_frac": [
+        {
+          "feature": "diff_nhl_shotsForPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winPctLeadPeriod1",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winPctTrailPeriod2",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_ppFaceoffPct",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_satPctAhead",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_mp_all_lowDangerGoalsAgainst",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_goalsAgainstPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_period1GoalsFor",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_pkNetGoalsPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winsInRegulation",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_netPenalties",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_goalie_team_savePct",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_losses",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_period2GoalsAgainst",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_goalie_starter_goalsAgainstAverage",
+          "nan_frac": 0.0
+        }
+      ]
+    },
+    "2025": {
+      "n_rows": 15,
+      "mean_row_nan_frac": 0.0,
+      "worst_columns_by_nan_frac": [
+        {
+          "feature": "diff_nhl_shotsForPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winPctLeadPeriod1",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winPctTrailPeriod2",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_ppFaceoffPct",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_satPctAhead",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_mp_all_lowDangerGoalsAgainst",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_goalsAgainstPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_period1GoalsFor",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_pkNetGoalsPerGame",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_winsInRegulation",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_netPenalties",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_goalie_team_savePct",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_losses",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_nhl_period2GoalsAgainst",
+          "nan_frac": 0.0
+        },
+        {
+          "feature": "diff_goalie_starter_goalsAgainstAverage",
+          "nan_frac": 0.0
+        }
+      ]
+    }
+  }
+}

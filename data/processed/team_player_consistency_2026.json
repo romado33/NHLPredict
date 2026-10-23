@@ -1,0 +1,102 @@
+{
+  "description": "Sum of top-N player pred_points vs team expected playoff games. High implied_ppg may indicate star-heavy weighting or injury noise.",
+  "top_n": 6,
+  "teams": {
+    "ANA": {
+      "team": "ANA",
+      "team_expected_games": 5.8528612631125485,
+      "top6_pred_points_sum": 38.5,
+      "implied_points_per_team_game_per_top_player_slot": 1.0963
+    },
+    "BOS": {
+      "team": "BOS",
+      "team_expected_games": 5.499965211903637,
+      "top6_pred_points_sum": 36.9,
+      "implied_points_per_team_game_per_top_player_slot": 1.1182
+    },
+    "BUF": {
+      "team": "BUF",
+      "team_expected_games": 13.808993883835853,
+      "top6_pred_points_sum": 75.1,
+      "implied_points_per_team_game_per_top_player_slot": 0.9064
+    },
+    "CAR": {
+      "team": "CAR",
+      "team_expected_games": 14.287643747088325,
+      "top6_pred_points_sum": 90.8,
+      "implied_points_per_team_game_per_top_player_slot": 1.0592
+    },
+    "COL": {
+      "team": "COL",
+      "team_expected_games": 17.999441754520376,
+      "top6_pred_points_sum": 149.8,
+      "implied_points_per_team_game_per_top_player_slot": 1.3871
+    },
+    "DAL": {
+      "team": "DAL",
+      "team_expected_games": 9.454865982596782,
+      "top6_pred_points_sum": 62.9,
+      "implied_points_per_team_game_per_top_player_slot": 1.1088
+    },
+    "EDM": {
+      "team": "EDM",
+      "team_expected_games": 9.853831383926423,
+      "top6_pred_points_sum": 80.6,
+      "implied_points_per_team_game_per_top_player_slot": 1.3633
+    },
+    "LAK": {
+      "team": "LAK",
+      "team_expected_games": 4.983045819715386,
+      "top6_pred_points_sum": 32.1,
+      "implied_points_per_team_game_per_top_player_slot": 1.0736
+    },
+    "MIN": {
+      "team": "MIN",
+      "team_expected_games": 6.123780318973092,
+      "top6_pred_points_sum": 40.4,
+      "implied_points_per_team_game_per_top_player_slot": 1.0995
+    },
+    "MTL": {
+      "team": "MTL",
+      "team_expected_games": 6.101994419542699,
+      "top6_pred_points_sum": 43.7,
+      "implied_points_per_team_game_per_top_player_slot": 1.1936
+    },
+    "OTT": {
+      "team": "OTT",
+      "team_expected_games": 6.147694335451914,
+      "top6_pred_points_sum": 40.5,
+      "implied_points_per_team_game_per_top_player_slot": 1.098
+    },
+    "PHI": {
+      "team": "PHI",
+      "team_expected_games": 5.820861415076349,
+      "top6_pred_points_sum": 32.8,
+      "implied_points_per_team_game_per_top_player_slot": 0.9392
+    },
+    "PIT": {
+      "team": "PIT",
+      "team_expected_games": 10.320333304338423,
+      "top6_pred_points_sum": 67.7,
+      "implied_points_per_team_game_per_top_player_slot": 1.0933
+    },
+    "TBL": {
+      "team": "TBL",
+      "team_expected_games": 10.724952230545421,
+      "top6_pred_points_sum": 74.4,
+      "implied_points_per_team_game_per_top_player_slot": 1.1562
+    },
+    "UTA": {
+      "team": "UTA",
+      "team_expected_games": 5.64071759181618,
+      "top6_pred_points_sum": 36.2,
+      "implied_points_per_team_game_per_top_player_slot": 1.0696
+    },
+    "VGK": {
+      "team": "VGK",
+      "team_expected_games": 13.731419362501782,
+      "top6_pred_points_sum": 92.3,
+      "implied_points_per_team_game_per_top_player_slot": 1.1203
+    }
+  }
+}

@@ -1,0 +1,528 @@
+﻿
+######################################################################
+  NHL PLAYOFF PREDICTOR V2 - FULL PIPELINE
+######################################################################
+2026-04-07 09:11:29,051 | INFO     | v2_pipeline | ============================================================
+2026-04-07 09:11:29,051 | INFO     | v2_pipeline | V2 PREDICTIONS FOR 2026
+2026-04-07 09:11:29,052 | INFO     | v2_pipeline | ============================================================
+python : 
+At C:\Users\RobDods\AppData\Local\Temp\ps-script-d78eeb50-46c5-46f7-b2ac-73a363ce7dd0.ps1:7 char:91
++ ... NG="utf-8"; python scripts/run_v2_pipeline.py --predict-only 2>&1 | O ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Standings:   0%|          | 0/1 [00:00<?, ?it/s]
+Standings: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  4.17it/s]
+Standings: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  4.16it/s]
+2026-04-07 09:11:29,310 | INFO     | src.data.collectors | Saved standings: 32 rows
+
+Team stats (NHL API):   0%|          | 0/1 [00:00<?, ?it/s]
+Team stats (NHL API): 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:08<00:00,  8.42s/it]
+Team stats (NHL API): 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:08<00:00,  8.42s/it]
+2026-04-07 09:11:37,734 | INFO     | src.data.collectors | Saved NHL team stats: 32 rows, 196 columns
+
+MoneyPuck stats:   0%|          | 0/1 [00:00<?, ?it/s]
+MoneyPuck stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  4.92it/s]
+MoneyPuck stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  4.91it/s]
+2026-04-07 09:11:37,954 | INFO     | src.data.collectors | Saved MoneyPuck team stats: 160 rows, 107 columns
+
+Goalie stats:   0%|          | 0/1 [00:00<?, ?it/s]
+Goalie stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:02<00:00,  2.22s/it]
+Goalie stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:02<00:00,  2.22s/it]
+2026-04-07 09:11:40,180 | INFO     | src.data.collectors | Saved goalie stats: 190 rows
+
+MoneyPuck recency:   0%|          | 0/1 [00:00<?, ?it/s]
+MoneyPuck recency: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  7.31it/s]
+MoneyPuck recency: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:00<00:00,  7.30it/s]
+2026-04-07 09:11:40,333 | INFO     | src.data.collectors_v2 | Saved MoneyPuck recency stats: 160 rows, 107 columns
+
+Skater stats:   0%|          | 0/1 [00:00<?, ?it/s]
+Skater stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:01<00:00,  1.41s/it]
+Skater stats: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:01<00:00,  1.41s/it]
+2026-04-07 09:11:41,821 | INFO     | src.data.collectors_v2 | Saved skater stats: 1816 rows, 49 columns
+2026-04-07 09:11:41,865 | INFO     | src.features.advanced | Built player features: 32 team-seasons
+2026-04-07 09:11:41,882 | INFO     | src.features.advanced | Built injury proxy features: 32 team-seasons
+2026-04-07 09:11:41,887 | INFO     | src.features.advanced | Built recency features: 32 team-seasons, 103 columns
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\utils\validation.py:2749: UserWarning: X does 
+not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\RobDods\AppData\Roaming\Python\Python313\site-packages\sklearn\impute\_base.py:637: UserWarning: Skipping 
+features without any observed values: ['diff_nhl_satPctAhead' 'diff_mp_all_lowDangerGoalsAgainst'
+ 'diff_mp_5v5_reboundGoalsAgainst' 'diff_mp_all_reboundGoalsAgainst'
+ 'diff_mp_all_takeawaysFor' 'diff_nhl_goalsForPct'
+ 'diff_mp_5v5_mediumDangerxGoalsFor' 'diff_nhl_goalsAgainst5On5'
+ 'diff_mp_5v5_goalsFor' 'diff_nhl_satPctBehind'
+ 'diff_mp_5v5_reboundxGoalsFor' 'diff_nhl_goalsAgainstPenaltyShots'
+ 'diff_mp_5v5_blockedShotAttemptsAgainst' 'diff_nhl_goalsFor4On5'
+ 'diff_mp_5v5_giveawaysAgainst' 'diff_mp_5v5_faceOffsWonFor'
+ 'diff_nhl_goalsAgainst5On4' 'diff_nhl_defensiveZoneFaceoffs'
+ 'diff_mp_5v5_blockedShotAttemptsFor']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+
+======================================================================
+  EASTERN CONFERENCE BRACKET
+======================================================================
+  Atlantic:   TBL(D1,102pts)  BUF(D2,102pts)  MTL(D3,100pts)
+  Metropolitan:   CAR(D1,104pts)  PIT(D2,96pts)  PHI(D3,90pts)
+  Wild Cards:  BOS(WC1,95pts)  OTT(WC2,90pts)
+
+  First Round Matchups:
+    CAR (D1) vs OTT (WC2)
+    PIT (D2) vs PHI (D3)
+    TBL (D1) vs BOS (WC1)
+    BUF (D2) vs MTL (D3)
+
+======================================================================
+  WESTERN CONFERENCE BRACKET
+======================================================================
+  Central:   COL(D1,110pts)  DAL(D2,102pts)  MIN(D3,100pts)
+  Pacific:   EDM(D1,87pts)  ANA(D2,87pts)  VGK(D3,86pts)
+  Wild Cards:  UTA(WC1,86pts)  LAK(WC2,83pts)
+
+  First Round Matchups:
+    COL (D1) vs LAK (WC2)
+    DAL (D2) vs MIN (D3)
+    EDM (D1) vs UTA (WC1)
+    ANA (D2) vs VGK (D3)
+
+======================================================================
+  ROUND 1: EASTERN CONFERENCE
+======================================================================
+
+  CAR vs OTT
+    Predicted winner: CAR (89.6%)
+    Model prob: 70.9%  |  MC series prob: 89.6%
+    In 4: 25%  In 5: 31%  In 6: 20%  In 7: 14%
+    Expected games: 5.3
+
+  PIT vs PHI
+    Predicted winner: PIT (95.0%)
+    Model prob: 77.2%  |  MC series prob: 95.0%
+    In 4: 34%  In 5: 34%  In 6: 17%  In 7: 10%
+    Expected games: 5.1
+
+  TBL vs BOS
+    Predicted winner: TBL (87.9%)
+    Model prob: 69.6%  |  MC series prob: 87.9%
+    In 4: 23%  In 5: 30%  In 6: 20%  In 7: 15%
+    Expected games: 5.4
+
+  BUF vs MTL
+    Predicted winner: BUF (92.7%)
+    Model prob: 74.3%  |  MC series prob: 92.7%
+    In 4: 29%  In 5: 33%  In 6: 19%  In 7: 12%
+    Expected games: 5.2
+
+======================================================================
+  ROUND 1: WESTERN CONFERENCE
+======================================================================
+
+  COL vs LAK
+    Predicted winner: COL (98.5%)
+    Model prob: 89.6%  |  MC series prob: 98.5%
+    In 4: 49%  In 5: 33%  In 6: 13%  In 7: 4%
+    Expected games: 4.5
+
+  DAL vs MIN
+    Predicted winner: DAL (61.8%)
+    Model prob: 54.7%  |  MC series prob: 61.8%
+    In 4: 9%  In 5: 17%  In 6: 17%  In 7: 19%
+    Expected games: 5.8
+
+  EDM vs UTA
+    Predicted winner: EDM (91.1%)
+    Model prob: 72.4%  |  MC series prob: 91.1%
+    In 4: 27%  In 5: 32%  In 6: 19%  In 7: 13%
+    Expected games: 5.3
+
+  ANA vs VGK
+    Predicted winner: VGK (94.8%)
+    Model prob: 21.8%  |  MC series prob: 5.2%
+    In 4: 0%  In 5: 1%  In 6: 1%  In 7: 3%
+    Expected games: 5.0
+
+======================================================================
+  ROUND 2: EASTERN CONFERENCE
+======================================================================
+
+  CAR vs PIT
+    Predicted winner: CAR (74.3%)
+    Model prob: 60.9%  |  MC series prob: 74.3%
+    In 4: 13%  In 5: 23%  In 6: 19%  In 7: 19%
+    Expected games: 5.7
+
+  TBL vs BUF
+    Predicted winner: TBL (54.0%)
+    Model prob: 51.0%  |  MC series prob: 54.0%
+    In 4: 7%  In 5: 14%  In 6: 15%  In 7: 18%
+    Expected games: 5.8
+
+======================================================================
+  ROUND 2: WESTERN CONFERENCE
+======================================================================
+
+  COL vs DAL
+    Predicted winner: COL (98.1%)
+    Model prob: 85.7%  |  MC series prob: 98.1%
+    In 4: 45%  In 5: 34%  In 6: 14%  In 7: 5%
+    Expected games: 4.6
+
+  EDM vs VGK
+    Predicted winner: VGK (53.3%)
+    Model prob: 47.7%  |  MC series prob: 46.7%
+    In 4: 5%  In 5: 11%  In 6: 13%  In 7: 17%
+    Expected games: 5.8
+
+======================================================================
+  CONFERENCE FINALS
+======================================================================
+
+  CAR vs TBL
+    Predicted winner: CAR (74.5%)
+    Model prob: 61.0%  |  MC series prob: 74.5%
+    In 4: 13%  In 5: 23%  In 6: 19%  In 7: 19%
+    Expected games: 5.7
+
+  COL vs VGK
+    Predicted winner: COL (98.4%)
+    Model prob: 87.0%  |  MC series prob: 98.4%
+    In 4: 47%  In 5: 33%  In 6: 13%  In 7: 5%
+    Expected games: 4.6
+
+======================================================================
+  STANLEY CUP FINAL
+======================================================================
+
+  CAR vs COL
+    Predicted winner: COL (95.5%)
+    Model prob: 20.5%  |  MC series prob: 4.5%
+    In 4: 0%  In 5: 1%  In 6: 1%  In 7: 3%
+    Expected games: 5.0
+
+**********************************************************************
+  PREDICTED 2026 STANLEY CUP CHAMPION: COL
+  Win probability: 95.5%
+**********************************************************************
+
+======================================================================
+  BAYESIAN UNCERTAINTY ANALYSIS (90% credible intervals)
+======================================================================
+  CAR vs OTT: CAR win prob = 68.1% (90% CI: 62.9%-72.5%)
+  PIT vs PHI: PIT win prob = 74.7% (90% CI: 69.5%-79.2%)
+  TBL vs BOS: TBL win prob = 65.6% (90% CI: 60.5%-70.1%)
+  BUF vs MTL: BUF win prob = 72.2% (90% CI: 67.0%-76.7%)
+  COL vs LAK: COL win prob = 89.0% (90% CI: 83.8%-93.4%)
+  DAL vs MIN: DAL win prob = 49.5% (90% CI: 44.3%-53.9%)
+  EDM vs UTA: EDM win prob = 69.6% (90% CI: 64.4%-74.0%)
+  ANA vs VGK: ANA win prob = 20.6% (90% CI: 15.4%-25.0%)
+
+######################################################################
+  V2 PIPELINE COMPLETE
+######################################################################

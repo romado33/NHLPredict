@@ -1,0 +1,58 @@
+{
+  "description": "Manual multipliers when beat reporting refines timeline vs ESPN. Default policy: playoff presumption (non-IR) is in src/data/player_health.py — only list exceptions here.",
+  "strip_espn_when": {
+    "rest_maintenance": true,
+    "rest_note": "Clears ESPN rows where injury_type or comment contains Rest with day-to-day status."
+  },
+  "players": [
+    {
+      "playerId": 8477934,
+      "playerName": "Leon Draisaitl",
+      "team_abbrev": "EDM",
+      "clear_espn_injury": true,
+      "skip_game_log_inactive": true,
+      "playoff_production_multiplier": 0.93,
+      "reason": "Lower-body; expected early R1 — Sportsnet/NHL Apr 2026."
+    },
+    {
+      "playerId": 8475786,
+      "playerName": "Zach Hyman",
+      "team_abbrev": "EDM",
+      "clear_espn_injury": true,
+      "playoff_production_multiplier": 0.94,
+      "reason": "Oilers late-RS caution; Knoblauch Apr 2026 — playoff-focused rest."
+    },
+    {
+      "playerId": 8480036,
+      "playerName": "Miro Heiskanen",
+      "team_abbrev": "DAL",
+      "clear_espn_injury": true,
+      "playoff_production_multiplier": 0.88,
+      "reason": "Lower-body; questionable R1 G1 — team week-to-week Apr 2026."
+    },
+    {
+      "playerId": 8478449,
+      "playerName": "Roope Hintz",
+      "team_abbrev": "DAL",
+      "clear_espn_injury": true,
+      "playoff_production_multiplier": 0.78,
+      "reason": "Out at least R1 G1-2 — coach Apr 2026."
+    },
+    {
+      "playerId": 8476312,
+      "playerName": "Josh Manson",
+      "team_abbrev": "COL",
+      "clear_espn_injury": true,
+      "playoff_production_multiplier": 0.52,
+      "reason": "Upper-body IR multi-week Apr 2026 — early playoff absence risk."
+    },
+    {
+      "playerId": 8482105,
+      "playerName": "Jake Sanderson",
+      "team_abbrev": "OTT",
+      "clear_espn_injury": true,
+      "playoff_production_multiplier": 0.84,
+      "reason": "UBI week-to-week; practice progression — Apr 2026."
+    }
+  ]
+}
